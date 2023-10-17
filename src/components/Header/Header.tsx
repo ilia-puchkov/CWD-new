@@ -4,7 +4,7 @@ import { AppBar, Button, Stack, Toolbar } from '@mui/material'
 function Header() {
   return (
     <header>
-      <AppBar position="relative" color="transparent">
+      <AppBar position="relative" color="transparent" elevation={0}>
         <Toolbar>
           <Stack spacing={1} direction="row">
             <Button variant="text" href="#" color="info">
