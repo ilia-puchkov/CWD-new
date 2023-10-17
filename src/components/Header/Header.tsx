@@ -1,43 +1,42 @@
 import React from 'react'
-import { AppBar, Button, Grid, Link, Toolbar } from '@mui/material'
+import { AppBar, Button, Stack, Toolbar } from '@mui/material'
 
 function Header() {
   return (
     <header>
-      <AppBar position="relative">
+      <AppBar position="relative" color="transparent">
         <Toolbar>
-          <Grid
-            container
-            spacing={2}
-            alignContent="center"
-            justifyContent="right"
-          >
-            <Grid item>
-              <Link href="#" color="secondary">
-                Formats
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" color="secondary">
-                About us
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" color="secondary">
-                Gallery
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" color="secondary">
-                Contacts
-              </Link>
-            </Grid>
-            <Grid item>
-              <Button variant="contained" color="primary">
-                Order call
-              </Button>
-            </Grid>
-          </Grid>
+          <Stack spacing={1} direction="row">
+            <Button variant="text" href="#" color="info">
+              Formats
+            </Button>
+            <Button
+              variant="text"
+              target="_blank"
+              href="http://google.com"
+              color="info"
+            >
+              About us
+            </Button>
+            <Button variant="text" href="#" color="info">
+              Gallery
+            </Button>
+            <Button variant="text" href="#" color="info">
+              Contacts
+            </Button>
+            <Button
+              variant="outlined"
+              color="info"
+              sx={{
+                ':hover': {
+                  bgcolor: 'primary.main', // theme.palette.primary.main
+                  color: 'white',
+                },
+              }}
+            >
+              Order call
+            </Button>
+          </Stack>
         </Toolbar>
       </AppBar>
     </header>
