@@ -1,11 +1,10 @@
 import React from 'react'
-import logo from './react-logo-test.svg'
+import Header from './components/Header/Header'
 
 export function App() {
   return (
     <div>
-      <h1>Hello TS</h1>
-      <img src={logo} width={100} alt="logo" />
+      <Header />
     </div>
   )
 }
