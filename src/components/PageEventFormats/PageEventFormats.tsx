@@ -1,14 +1,14 @@
 import React from 'react'
 import { Grid } from '@mui/material'
 import formatsList from '../../utils/formatsList'
-import PageEvent from '../PageEvent/PageEvent'
+import PageEventFormat from '../PageEventFormat/PageEventFormat'
 
 function PageEventFormats() {
   return (
     <section>
-      <Grid container spacing={4} justifyContent="center" columns={3}>
+      <Grid container spacing={2} sx={{ justifyContent: 'center' }} my={4}>
         {formatsList.map((format) => (
-          <PageEvent format={format} key={format.id} />
+          <PageEventFormat format={format} key={format.id} />
         ))}
       </Grid>
     </section>

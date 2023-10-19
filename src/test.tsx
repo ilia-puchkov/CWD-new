@@ -1,14 +1,28 @@
 import React from 'react'
-import { Typography, Button } from '@mui/material'
+import {} from '@mui/material'
 
 function Test() {
   return (
-    <div>
-      <Typography variant="h1">text</Typography>
-      <Button variant="text">text</Button>
-      <Button variant="contained">text</Button>
-      <Button variant="outlined">text</Button>
-    </div>
+    <div></div>
+    // <div>
+    //   <Stack direction="column" spacing={2}>
+    //     <TextField label="Name" color="primary"></TextField>
+    //     <TextField
+    //       label="Number"
+    //       color="secondary"
+    //       helperText="new error"
+    //       type="phone"
+    //     ></TextField>
+    //     <TextField
+    //       label="Cost"
+    //       color="secondary"
+    //       InputProps={{
+    //         startAdornment: <InputAdornment position="start">₽</InputAdornment>,
+    //       }}
+    //     ></TextField>
+    //     <Button variant="outlined">text</Button>
+    //   </Stack>
+    // </div>
   )
 }
 
