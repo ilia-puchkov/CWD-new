@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Box, Button, Modal, Stack, TextField } from '@mui/material'
+import { Box, Button, IconButton, Modal, Stack, TextField } from '@mui/material'
+import CloseIcon from '@mui/icons-material/Close'
 
 const style = {
   position: 'absolute',
@@ -21,11 +22,13 @@ function PopupCall() {
   return (
     <Modal
       open={open}
-      onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
+        <IconButton>
+          <CloseIcon onClick={handleClose} />
+        </IconButton>
         <Stack direction="column" spacing={2}>
           <TextField label="Name" color="primary"></TextField>
           <TextField
