@@ -20,15 +20,15 @@ function Header() {
             >
               Formats
             </Button>
+            <Button variant="text" href="#about" color="secondary" size="small">
+              About us
+            </Button>
             <Button
               variant="text"
-              href="http://google.com"
+              href="#gallery"
               color="secondary"
               size="small"
             >
-              About us
-            </Button>
-            <Button variant="text" href="#" color="secondary" size="small">
               Gallery
             </Button>
             <Button

@@ -4,7 +4,7 @@ import galleryImages from '../../utils/galleryImages'
 
 function PageGallery() {
   return (
-    <section>
+    <section id="gallery">
       <Typography variant="h2">Gallery</Typography>
       <Typography variant="h4">Your event</Typography>
       <Stack spacing={4}>

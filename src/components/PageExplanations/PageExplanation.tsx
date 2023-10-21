@@ -3,7 +3,7 @@ import React from 'react'
 
 function PageExplanation() {
   return (
-    <section>
+    <section id="explanations">
       <Typography variant="h2" color="primary.main">
         КАК ЭТО РАБОТАЕТ?
       </Typography>

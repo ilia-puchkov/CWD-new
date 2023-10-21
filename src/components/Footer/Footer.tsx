@@ -37,6 +37,20 @@ function Footer() {
           </ButtonGroup>
         </Stack>
         <Stack spacing={1} direction="column">
+          <Button
+            variant="outlined"
+            color="secondary"
+            size="small"
+            sx={{
+              transition: '.7s ease-in-out',
+              ':hover': {
+                bgcolor: 'secondary.main',
+                color: 'white',
+              },
+            }}
+          >
+            Order call
+          </Button>
           <img style={{ width: '100px' }} src={logo} alt="footer-logo" />
           <Typography variant="h6">Create wow Date</Typography>
         </Stack>

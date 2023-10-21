@@ -4,7 +4,7 @@ import pageLogo from '../../images/calendar.png'
 
 function PageIntro() {
   return (
-    <section>
+    <section id="intro">
       <Stack direction="row">
         <Stack direction="column">
           <Typography variant="h1" color="primary.main">
