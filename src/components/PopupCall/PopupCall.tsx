@@ -26,8 +26,8 @@ function PopupCall() {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <IconButton>
-          <CloseIcon onClick={handleClose} />
+        <IconButton onClick={handleClose}>
+          <CloseIcon />
         </IconButton>
         <Stack direction="column" spacing={2}>
           <TextField label="Name" color="primary"></TextField>
