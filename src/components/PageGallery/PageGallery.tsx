@@ -5,7 +5,9 @@ import galleryImages from '../../utils/galleryImages'
 function PageGallery() {
   return (
     <section id="gallery">
-      <Typography variant="h2">Gallery</Typography>
+      <Typography variant="h2" color="primary">
+        Gallery
+      </Typography>
       <Typography variant="h4">Your event</Typography>
       <Stack spacing={4}>
         <Box sx={{ width: '95%', height: 450, overflowY: 'scroll' }}>

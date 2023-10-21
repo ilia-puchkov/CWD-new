@@ -1,46 +1,40 @@
-import React from 'react'
-import { AppBar, Button, ButtonGroup, Stack, Toolbar } from '@mui/material'
-import SideMenu from '../SideMenu/SideMenu'
+import React, { useState } from 'react'
+import {
+  AppBar,
+  Button,
+  IconButton,
+  Stack,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Box,
+} from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import logo from '../../images/cwd-logo.png'
 
 function Header() {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
+
+  function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
+    setAnchorEl(event.currentTarget)
+  }
+
+  function handleClose() {
+    setAnchorEl(null)
+  }
+
   return (
-    <AppBar
-      position="relative"
-      color="transparent"
-      elevation={0}
-      sx={{ justifyContent: 'space-between' }}
-    >
-      <Toolbar sx={{ marginLeft: 'auto' }}>
-        <Stack spacing={1} direction="row">
-          <ButtonGroup arial-label="header button group">
-            <Button
-              variant="text"
-              href="#formats"
-              size="small"
-              color="secondary"
-            >
-              Formats
-            </Button>
-            <Button variant="text" href="#about" color="secondary" size="small">
-              About us
-            </Button>
-            <Button
-              variant="text"
-              href="#gallery"
-              color="secondary"
-              size="small"
-            >
-              Gallery
-            </Button>
-            <Button
-              variant="text"
-              href="#contacts"
-              color="secondary"
-              size="small"
-            >
-              Contacts
-            </Button>
-          </ButtonGroup>
+    <AppBar position="static" color="transparent" elevation={0}>
+      <Toolbar>
+        <Box sx={{ flexGrow: 1 }}>
+          <img
+            style={{ width: '70px', marginRight: '20px' }}
+            src={logo}
+            alt="page-logo"
+          />
+        </Box>
+        <Stack spacing={2} direction="row">
           <Button
             variant="outlined"
             color="secondary"
@@ -55,8 +49,65 @@ function Header() {
           >
             Order call
           </Button>
-          <SideMenu />
+          <IconButton
+            id="menu-button"
+            size="small"
+            edge="start"
+            color="secondary"
+            aria-label="logo"
+            onClick={handleClick}
+            aria-controls={open ? 'page-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+          >
+            <MenuIcon />
+          </IconButton>
         </Stack>
+        <Menu
+          id="page-menu"
+          anchorEl={anchorEl}
+          open={open}
+          MenuListProps={{
+            'aria-labelledby': 'menu-button',
+          }}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={handleClose}>
+            <Button
+              variant="text"
+              href="#formats"
+              size="small"
+              color="secondary"
+            >
+              Formats
+            </Button>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Button variant="text" href="#about" color="secondary" size="small">
+              About us
+            </Button>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Button
+              variant="text"
+              href="#gallery"
+              color="secondary"
+              size="small"
+            >
+              Gallery
+            </Button>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Button
+              variant="text"
+              href="#contacts"
+              color="secondary"
+              size="small"
+            >
+              Contacts
+            </Button>
+          </MenuItem>
+        </Menu>
       </Toolbar>
     </AppBar>
   )
