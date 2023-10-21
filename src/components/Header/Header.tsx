@@ -1,5 +1,6 @@
 import React from 'react'
 import { AppBar, Button, ButtonGroup, Stack, Toolbar } from '@mui/material'
+import SideMenu from '../SideMenu/SideMenu'
 
 function Header() {
   return (
@@ -54,6 +55,7 @@ function Header() {
           >
             Order call
           </Button>
+          <SideMenu />
         </Stack>
       </Toolbar>
     </AppBar>
