@@ -8,7 +8,7 @@ function PageGallery() {
       <Typography variant="h2">Gallery</Typography>
       <Typography variant="h4">Your event</Typography>
       <Stack spacing={4}>
-        <Box sx={{ width: 500, height: 450, overflowY: 'scroll' }}>
+        <Box sx={{ width: '95%', height: 450, overflowY: 'scroll' }}>
           <ImageList variant="masonry" cols={3} gap={3}>
             {galleryImages.map((image) => (
               <ImageListItem key={image.id}>

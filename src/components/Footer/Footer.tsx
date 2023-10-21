@@ -1,11 +1,16 @@
-import { Button, ButtonGroup, Stack, Typography } from '@mui/material'
+import { Box, Button, ButtonGroup, Stack, Typography } from '@mui/material'
 import React from 'react'
 import logo from '../../images/cwd-logo.png'
 
 function Footer() {
   return (
-    <footer>
-      <Stack spacing={3} direction="row">
+    <footer id="contacts">
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        flexDirection="row"
+        sx={{ width: '95%' }}
+      >
         <Stack spacing={1}>
           <ButtonGroup
             orientation="vertical"
@@ -60,7 +65,7 @@ function Footer() {
             </Button>
           </ButtonGroup>
         </Stack>
-      </Stack>
+      </Box>
     </footer>
   )
 }
