@@ -16,7 +16,7 @@ function PageIntro() {
             <Typography variant="h1" color="primary.main">
               С НАМИ ЛЮБОЙ ДЕНЬ - ПРАЗДНИК!
             </Typography>
-            <Typography variant="h2">
+            <Typography variant="h2" color="primary.contrastText">
               создаём незабываемые мероприятия по индивидуальному сценарию
             </Typography>
             <Button

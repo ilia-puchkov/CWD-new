@@ -64,6 +64,7 @@ function Header() {
           </IconButton>
         </Stack>
         <Menu
+          sx={{ paddingTop: 0, paddingBottom: 0 }}
           id="page-menu"
           anchorEl={anchorEl}
           open={open}
@@ -78,12 +79,27 @@ function Header() {
               href="#formats"
               size="small"
               color="secondary"
+              sx={{
+                '&:hover': {
+                  background: 'none',
+                },
+              }}
             >
               Formats
             </Button>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Button variant="text" href="#about" color="secondary" size="small">
+            <Button
+              variant="text"
+              href="#about"
+              color="secondary"
+              size="small"
+              sx={{
+                '&:hover': {
+                  background: 'none',
+                },
+              }}
+            >
               About us
             </Button>
           </MenuItem>
@@ -93,6 +109,11 @@ function Header() {
               href="#gallery"
               color="secondary"
               size="small"
+              sx={{
+                '&:hover': {
+                  background: 'none',
+                },
+              }}
             >
               Gallery
             </Button>
@@ -103,6 +124,11 @@ function Header() {
               href="#contacts"
               color="secondary"
               size="small"
+              sx={{
+                '&:hover': {
+                  background: 'none',
+                },
+              }}
             >
               Contacts
             </Button>

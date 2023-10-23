@@ -6,7 +6,7 @@ import PageEventFormat from '../PageEventFormat/PageEventFormat'
 function PageEventFormats() {
   return (
     <section id="formats">
-      <Grid container spacing={1} sx={{ justifyContent: 'center' }} my={4}>
+      <Grid container spacing={3} sx={{ justifyContent: 'center' }} my={4}>
         {formatsList.map((format) => (
           <PageEventFormat format={format} key={format.id} />
         ))}
