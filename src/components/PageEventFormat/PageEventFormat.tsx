@@ -13,12 +13,17 @@ function PageEventFormat({ format }: FormatProps) {
       xs={12}
       sm={6}
       md={4}
-      sx={{ justifyContent: 'center', padding: 0, width: 300, height: 350 }}
+      sx={{
+        justifyContent: 'center',
+        padding: 0,
+        maxWidth: 300,
+        maxHeight: 350,
+      }}
     >
       <Card
         sx={{
           maxWidth: 300,
-          height: 350,
+          maxHeight: 350,
           boxShadow: 0,
           backgroundColor: 'inherit',
         }}
@@ -36,7 +41,7 @@ function PageEventFormat({ format }: FormatProps) {
             variant="h5"
             component="div"
             textAlign={'center'}
-            color="primary.contrastText"
+            color="primary"
           >
             {format.name}
           </Typography>

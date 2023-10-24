@@ -8,12 +8,12 @@ interface FooterProps {
 
 function Footer({ onPopupCallClick }: FooterProps) {
   return (
-    <footer id="contacts">
+    <Box component="footer" id="contacts" mt={5} pb={2}>
       <Box
         display="flex"
         justifyContent="space-between"
         flexDirection="row"
-        sx={{ width: '95%' }}
+        sx={{ width: '99%' }}
       >
         <Stack spacing={1}>
           <ButtonGroup
@@ -40,7 +40,13 @@ function Footer({ onPopupCallClick }: FooterProps) {
             </Button>
           </ButtonGroup>
         </Stack>
-        <Stack spacing={1} direction="column">
+        <Stack
+          spacing={1}
+          direction="column"
+          display={'flex'}
+          flexDirection={'column'}
+          justifyItems={'center'}
+        >
           <Button
             onClick={onPopupCallClick}
             variant="outlined"
@@ -49,17 +55,23 @@ function Footer({ onPopupCallClick }: FooterProps) {
             sx={{
               transition: '.7s ease-in-out',
               ':hover': {
-                bgcolor: 'secondary.main',
+                bgcolor: 'primary.main',
                 color: 'white',
               },
             }}
           >
-            Order call
+            Заказать звонок
           </Button>
-          <img style={{ width: '100px' }} src={logo} alt="footer-logo" />
-          <Typography variant="h6">Create wow Date</Typography>
+          <img
+            style={{ width: '90px', margin: '10px auto 0' }}
+            src={logo}
+            alt="footer-logo"
+          />
+          <Typography variant="body1" color="primary" textAlign={'center'}>
+            Create wow Date
+          </Typography>
         </Stack>
-        <Stack spacing={1} direction="column">
+        <Stack spacing={1} direction="column" justifyContent={'space-between'}>
           <ButtonGroup
             orientation="vertical"
             arial-label="footer contacts button group"
@@ -85,7 +97,7 @@ function Footer({ onPopupCallClick }: FooterProps) {
           </ButtonGroup>
         </Stack>
       </Box>
-    </footer>
+    </Box>
   )
 }
 

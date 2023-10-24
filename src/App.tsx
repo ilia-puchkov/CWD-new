@@ -33,7 +33,12 @@ export function App() {
     <ThemeProvider theme={pageTheme}>
       <CssBaseline />
       <Container
-        sx={{ maxWidth: 1280, backgroundImage: `url(${backgroundNoise})` }}
+        sx={{
+          backgroundImage: `url(${backgroundNoise})`,
+          '@media (max-width:600px)': {
+            padding: '0',
+          },
+        }}
       >
         <Header onPopupCallClick={handlePopupCallOpen} />
         <PageIntro onPopupFormClick={handlePopupFormOpen} />

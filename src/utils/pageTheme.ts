@@ -16,4 +16,43 @@ const pageTheme = createTheme({
   },
 })
 
+pageTheme.typography.h1 = {
+  fontSize: '4rem',
+  '@media (max-width:600px)': {
+    fontSize: '2rem',
+    textAlign: 'center',
+  },
+}
+
+pageTheme.typography.h2 = {
+  fontSize: '2.5rem',
+  '@media (max-width:600px)': {
+    fontSize: '1.5rem',
+    textAlign: 'center',
+  },
+}
+
+pageTheme.typography.subtitle1 = {
+  fontSize: '1rem',
+  '@media (max-width:600px)': {
+    textAlign: 'center',
+  },
+}
+
+pageTheme.typography.subtitle2 = {
+  fontSize: '1rem',
+  '@media (max-width:600px)': {
+    textAlign: 'left',
+  },
+}
+
+pageTheme.typography.body2 = {
+  '@media (max-width:600px)': {
+    fontSize: '14px',
+    textAlign: 'center',
+  },
+}
+
+// pageTheme = responsiveFontSizes(pageTheme)
+
 export default pageTheme
