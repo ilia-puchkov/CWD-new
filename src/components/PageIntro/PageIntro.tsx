@@ -2,7 +2,11 @@ import React from 'react'
 import { Box, Typography, Button, Stack } from '@mui/material'
 import pageLogo from '../../images/calendar.png'
 
-function PageIntro() {
+interface PageIntroProps {
+  onPopupFormClick: () => void
+}
+
+function PageIntro({ onPopupFormClick }: PageIntroProps) {
   return (
     <section id="intro">
       <Stack direction={{ sx: 'column', md: 'row' }}>
@@ -20,6 +24,7 @@ function PageIntro() {
               создаём незабываемые мероприятия по индивидуальному сценарию
             </Typography>
             <Button
+              onClick={onPopupFormClick}
               variant="outlined"
               color="secondary"
               size="small"

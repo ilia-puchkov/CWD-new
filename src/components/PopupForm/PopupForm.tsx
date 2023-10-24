@@ -14,12 +14,12 @@ const style = {
   p: 4,
 }
 
-interface PopupCallProps {
+interface PopupFormPorps {
   isOpen: boolean
   onClose: () => void
 }
 
-function PopupCall({ isOpen, onClose }: PopupCallProps) {
+function PopupForm({ isOpen, onClose }: PopupFormPorps) {
   return (
     <Modal
       open={isOpen}
@@ -45,4 +45,4 @@ function PopupCall({ isOpen, onClose }: PopupCallProps) {
   )
 }
 
-export default PopupCall
+export default PopupForm

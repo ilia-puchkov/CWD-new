@@ -2,7 +2,11 @@ import { Box, Button, ButtonGroup, Stack, Typography } from '@mui/material'
 import React from 'react'
 import logo from '../../images/cwd-logo.png'
 
-function Footer() {
+interface FooterProps {
+  onPopupCallClick: () => void
+}
+
+function Footer({ onPopupCallClick }: FooterProps) {
   return (
     <footer id="contacts">
       <Box
@@ -38,8 +42,9 @@ function Footer() {
         </Stack>
         <Stack spacing={1} direction="column">
           <Button
+            onClick={onPopupCallClick}
             variant="outlined"
-            color="secondary"
+            color="primary"
             size="small"
             sx={{
               transition: '.7s ease-in-out',

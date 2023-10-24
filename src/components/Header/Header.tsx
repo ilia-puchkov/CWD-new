@@ -12,7 +12,11 @@ import {
 import MenuIcon from '@mui/icons-material/Menu'
 import logo from '../../images/cwd-logo.png'
 
-function Header() {
+interface HeaderProps {
+  onPopupCallClick: () => void
+}
+
+function Header({ onPopupCallClick }: HeaderProps) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
 
@@ -36,6 +40,7 @@ function Header() {
         </Box>
         <Stack spacing={2} direction="row">
           <Button
+            onClick={onPopupCallClick}
             variant="outlined"
             color="secondary"
             size="small"
