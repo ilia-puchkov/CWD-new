@@ -46,6 +46,18 @@ interface PopupFormProps {
   onClose: () => void
 }
 
+// type TextToView = Map<number, React.Component<unknown, unknown>>
+
+// const textToView: TextToView = [
+//   {
+//     0: (
+//       <Typography variant="h3" sx={typoStyle}>
+//         Узнаем ваши предпочтения и организуем уникальное мероприятие!
+//       </Typography>
+//     ),
+//   },
+// ]
+
 function PopupForm({ isOpen, onClose }: PopupFormProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0)
 
