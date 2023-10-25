@@ -37,7 +37,12 @@ function Header({ onPopupCallClick }: HeaderProps) {
   }
 
   return (
-    <AppBar position="static" color="transparent" elevation={0}>
+    <AppBar
+      position="static"
+      color="transparent"
+      elevation={0}
+      sx={{ paddingTop: '10px' }}
+    >
       <Toolbar>
         <Box sx={{ flexGrow: 1 }}>
           <img

@@ -35,6 +35,12 @@ const style = {
   justifyContent: 'center',
 }
 
+const typoStyle = {
+  color: 'primary.main',
+  textAlign: 'center',
+  fontSize: '20px',
+}
+
 interface PopupFormProps {
   isOpen: boolean
   onClose: () => void
@@ -70,13 +76,13 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
         </IconButton>
         <Stack direction="column" spacing={2}>
           {currentQuestion === 0 && (
-            <Typography variant="h3" color="primary" textAlign={'center'}>
+            <Typography variant="h3" sx={typoStyle}>
               Узнаем ваши предпочтения и организуем уникальное мероприятие!
             </Typography>
           )}
           {currentQuestion === 1 && (
             <>
-              <Typography variant="h3" color="primary" textAlign={'center'}>
+              <Typography variant="h3" sx={typoStyle}>
                 1. По какому поводу мероприятие?
               </Typography>
               <TextField
@@ -89,7 +95,7 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
           )}
           {currentQuestion === 2 && (
             <>
-              <Typography variant="h3" color="primary" textAlign={'center'}>
+              <Typography variant="h3" sx={typoStyle}>
                 2. Желаемая дата и время мероприятия
               </Typography>
               <TextField
@@ -102,7 +108,7 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
           )}
           {currentQuestion === 3 && (
             <>
-              <Typography variant="h3" color="primary" textAlign={'center'}>
+              <Typography variant="h3" sx={typoStyle}>
                 3. Бюджетные рамки
               </Typography>
               <TextField
@@ -115,7 +121,7 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
           )}
           {currentQuestion === 4 && (
             <>
-              <Typography variant="h3" color="primary" textAlign={'center'}>
+              <Typography variant="h3" sx={typoStyle}>
                 4. Какую атмосферу праздника вы бы хотели создать?
               </Typography>
               <TextField
@@ -128,7 +134,7 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
           )}
           {currentQuestion === 5 && (
             <>
-              <Typography variant="h3" color="primary" textAlign={'center'}>
+              <Typography variant="h3" sx={typoStyle}>
                 5. Увлечения/хобби и то, что очень любит человек, для которого
                 устраиваем мероприятие
               </Typography>
@@ -142,7 +148,7 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
           )}
           {currentQuestion === 6 && (
             <>
-              <Typography variant="h3" color="primary" textAlign={'center'}>
+              <Typography variant="h3" sx={typoStyle}>
                 6. Что-то важное, что по вашему мнению нам нужно знать
                 (аллергия, фобии, физические ограничения...)
               </Typography>

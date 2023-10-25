@@ -61,6 +61,7 @@ function PopupCall({ isOpen, onClose }: PopupCallProps) {
           color="primary.main"
           mb={1}
           textAlign={'center'}
+          fontSize={'30px'}
         >
           Заказать звонок
         </Typography>
