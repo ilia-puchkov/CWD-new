@@ -16,6 +16,14 @@ interface HeaderProps {
   onPopupCallClick: () => void
 }
 
+const headerButtonStyle = {
+  width: '100%',
+  margin: '0 5px',
+  '&:hover': {
+    background: 'none',
+  },
+}
+
 function Header({ onPopupCallClick }: HeaderProps) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
@@ -52,7 +60,7 @@ function Header({ onPopupCallClick }: HeaderProps) {
               },
             }}
           >
-            Order call
+            Заказать звонок
           </Button>
           <IconButton
             id="menu-button"
@@ -78,64 +86,48 @@ function Header({ onPopupCallClick }: HeaderProps) {
           }}
           onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={handleClose} sx={{ padding: 0 }}>
             <Button
               variant="text"
               href="#formats"
               size="small"
               color="secondary"
-              sx={{
-                '&:hover': {
-                  background: 'none',
-                },
-              }}
+              sx={headerButtonStyle}
             >
-              Formats
+              Форматы
             </Button>
           </MenuItem>
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={handleClose} sx={{ padding: 0 }}>
             <Button
               variant="text"
               href="#about"
               color="secondary"
               size="small"
-              sx={{
-                '&:hover': {
-                  background: 'none',
-                },
-              }}
+              sx={headerButtonStyle}
             >
-              About us
+              О нас
             </Button>
           </MenuItem>
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={handleClose} sx={{ padding: 0 }}>
             <Button
               variant="text"
               href="#gallery"
               color="secondary"
               size="small"
-              sx={{
-                '&:hover': {
-                  background: 'none',
-                },
-              }}
+              sx={headerButtonStyle}
             >
-              Gallery
+              Галерея
             </Button>
           </MenuItem>
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={handleClose} sx={{ padding: 0 }}>
             <Button
               variant="text"
               href="#contacts"
               color="secondary"
               size="small"
-              sx={{
-                '&:hover': {
-                  background: 'none',
-                },
-              }}
+              sx={headerButtonStyle}
             >
-              Contacts
+              Контакты
             </Button>
           </MenuItem>
         </Menu>

@@ -36,7 +36,7 @@ export function App() {
         sx={{
           backgroundImage: `url(${backgroundNoise})`,
           '@media (max-width:600px)': {
-            padding: '0',
+            padding: '5px',
           },
         }}
       >

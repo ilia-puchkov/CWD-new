@@ -105,7 +105,6 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           color="primary"
           size="small"
           sx={{
-            width: 150,
             margin: '20px auto 10px',
             zIndex: 2,
             ':hover': {
@@ -114,7 +113,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
             },
           }}
         >
-          Fill Form
+          Заполнить анкету
         </Button>
       </Box>
     </Box>

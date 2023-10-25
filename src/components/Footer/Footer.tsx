@@ -9,6 +9,9 @@ interface FooterProps {
 function Footer({ onPopupCallClick }: FooterProps) {
   return (
     <Box component="footer" id="contacts" mt={5} pb={2}>
+      <Typography variant="h2" color="primary.main" mb={1} textAlign={'center'}>
+        Остались вопросы?
+      </Typography>
       <Box
         display="flex"
         justifyContent="space-between"
@@ -20,23 +23,32 @@ function Footer({ onPopupCallClick }: FooterProps) {
             orientation="vertical"
             arial-label="footer navigation button group"
           >
-            <Button variant="text" href="#" size="small" color="secondary">
-              Formats
+            <Button
+              variant="text"
+              href="#formats"
+              size="small"
+              color="secondary"
+            >
+              Форматы
+            </Button>
+            <Button variant="text" href="#about" color="secondary" size="small">
+              О нас
             </Button>
             <Button
               variant="text"
-              target="_blank"
-              href="http://google.com"
+              href="#gallery"
               color="secondary"
               size="small"
             >
-              About us
+              Галерея
             </Button>
-            <Button variant="text" href="#" color="secondary" size="small">
-              Gallery
-            </Button>
-            <Button variant="text" href="#" color="secondary" size="small">
-              Contacts
+            <Button
+              variant="text"
+              href="#contacts"
+              color="secondary"
+              size="small"
+            >
+              Контакты
             </Button>
           </ButtonGroup>
         </Stack>
@@ -53,6 +65,8 @@ function Footer({ onPopupCallClick }: FooterProps) {
             color="primary"
             size="small"
             sx={{
+              maxWidth: '120px',
+              fontSize: '10px',
               transition: '.7s ease-in-out',
               ':hover': {
                 bgcolor: 'primary.main',
@@ -76,8 +90,13 @@ function Footer({ onPopupCallClick }: FooterProps) {
             orientation="vertical"
             arial-label="footer contacts button group"
           >
-            <Button variant="text" href="#" size="small" color="secondary">
-              Call
+            <Button
+              variant="text"
+              href="tel:+9971863733"
+              size="small"
+              color="secondary"
+            >
+              Позвонить
             </Button>
             <Button
               variant="text"
@@ -86,13 +105,13 @@ function Footer({ onPopupCallClick }: FooterProps) {
               color="secondary"
               size="small"
             >
-              Write
+              Написать
             </Button>
             <Button variant="text" href="#" color="secondary" size="small">
               Telegram
             </Button>
             <Button variant="text" href="#" color="secondary" size="small">
-              VK
+              ВКонтакте
             </Button>
           </ButtonGroup>
         </Stack>

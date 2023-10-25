@@ -30,8 +30,13 @@ function PageEventFormat({ format }: FormatProps) {
       >
         <CardMedia
           component="img"
-          height="100"
-          sx={{ objectFit: 'contain' }}
+          sx={{
+            objectFit: 'contain',
+            height: '100px',
+            '@media (max-width:500px)': {
+              height: '80px',
+            },
+          }}
           image={format.logo}
           alt={format.name}
         />

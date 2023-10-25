@@ -15,7 +15,7 @@ function PageGallery() {
   return (
     <Box component="section" id="gallery" mt={5}>
       <Typography variant="h2" color="primary" textAlign={'center'}>
-        Gallery
+        Галерея
       </Typography>
       <Typography
         variant="subtitle1"

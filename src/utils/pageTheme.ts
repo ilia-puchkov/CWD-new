@@ -1,6 +1,16 @@
 import { createTheme } from '@mui/material'
 
 const pageTheme = createTheme({
+  typography: {
+    h3: {
+      fontSize: '2rem',
+      color: 'red',
+      margin: '0 0 0 10px',
+      '@media (max-width:600px)': {
+        fontSize: '1rem',
+      },
+    },
+  },
   palette: {
     primary: {
       main: '#2ec2f0',
@@ -18,9 +28,11 @@ const pageTheme = createTheme({
 
 pageTheme.typography.h1 = {
   fontSize: '4rem',
+  '@media (max-width:900px)': {
+    textAlign: 'center',
+  },
   '@media (max-width:600px)': {
     fontSize: '2rem',
-    textAlign: 'center',
   },
 }
 
@@ -33,8 +45,9 @@ pageTheme.typography.h2 = {
 }
 
 pageTheme.typography.subtitle1 = {
-  fontSize: '1rem',
+  fontSize: '1.5rem',
   '@media (max-width:600px)': {
+    fontSize: '1rem',
     textAlign: 'center',
   },
 }
@@ -47,12 +60,10 @@ pageTheme.typography.subtitle2 = {
 }
 
 pageTheme.typography.body2 = {
-  '@media (max-width:600px)': {
+  '@media (max-width:900px)': {
     fontSize: '14px',
     textAlign: 'center',
   },
 }
-
-// pageTheme = responsiveFontSizes(pageTheme)
 
 export default pageTheme

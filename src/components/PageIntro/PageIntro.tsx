@@ -8,21 +8,46 @@ interface PageIntroProps {
 
 function PageIntro({ onPopupFormClick }: PageIntroProps) {
   return (
-    <Box component="section" id="intro" mt={8}>
+    <Box
+      component="section"
+      id="intro"
+      mt={8}
+      display={'flex'}
+      justifyContent={'center'}
+    >
       <Stack
         direction={{ sx: 'column', md: 'row' }}
         padding={{ sx: '10px', md: '40px' }}
       >
         <Box
           sx={{
+            maxWidth: '600px',
             flexGrow: 1,
           }}
         >
-          <Stack direction="column" justifyContent="center">
+          <Stack
+            direction="column"
+            justifyContent="center"
+            maxWidth={'650px'}
+            sx={{
+              '@media (max-width:900px)': {
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              },
+            }}
+          >
             <Typography variant="h1" color="primary.main">
               С НАМИ ЛЮБОЙ ДЕНЬ - ПРАЗДНИК!
             </Typography>
-            <Typography variant="subtitle1" color="primary.contrastText">
+            <Typography
+              variant="subtitle1"
+              color="primary.contrastText"
+              sx={{
+                '@media (max-width:900px)': {
+                  textAlign: 'center',
+                },
+              }}
+            >
               создаём незабываемые мероприятия по индивидуальному сценарию
             </Typography>
             <Button
@@ -31,9 +56,9 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
               color="secondary"
               size="small"
               sx={{
-                width: 150,
+                maxWidth: '170px',
                 ':hover': {
-                  bgcolor: 'secondary.main', // theme.palette.primary.main
+                  bgcolor: 'secondary.main',
                   color: 'white',
                 },
                 marginTop: 5,
@@ -43,22 +68,27 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
                 },
               }}
             >
-              Fill Form
+              Заполнить анкету
             </Button>
           </Stack>
         </Box>
 
         <Box
           sx={{
-            width: 350,
-            marginTop: 5,
-            '@media (max-width:400px)': {
-              width: 300,
+            width: 500,
+            '@media (max-width:600px)': {
+              width: 250,
               marginTop: 8,
+              marginLeft: 'auto',
+              marginRight: 'auto',
             },
           }}
         >
-          <img style={{ width: '100%' }} src={pageLogo} alt="EventCalendar" />
+          <img
+            style={{ width: '100%', margin: '0 auto' }}
+            src={pageLogo}
+            alt="EventCalendar"
+          />
         </Box>
       </Stack>
     </Box>
