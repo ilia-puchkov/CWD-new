@@ -75,7 +75,7 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
 
         <Box
           sx={{
-            width: 500,
+            width: 400,
             '@media (max-width:600px)': {
               width: 250,
               marginTop: 8,
