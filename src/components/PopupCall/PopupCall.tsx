@@ -70,7 +70,15 @@ function PopupCall({ isOpen, onClose }: PopupCallProps) {
             variant="standard"
             label="Ваше имя"
             color="primary"
-            sx={{ input: { color: 'primary.main' } }}
+            sx={{
+              input: {
+                color: 'primary.main',
+                borderBottom: '1px solid white',
+              },
+              label: {
+                color: 'primary.contrastText',
+              },
+            }}
           ></TextField>
           <TextField
             variant="standard"
@@ -78,7 +86,15 @@ function PopupCall({ isOpen, onClose }: PopupCallProps) {
             color="primary"
             helperText=""
             type="phone"
-            sx={{ input: { color: 'primary.main' } }}
+            sx={{
+              input: {
+                color: 'primary.main',
+                borderBottom: '1px solid white',
+              },
+              label: {
+                color: 'primary.contrastText',
+              },
+            }}
           ></TextField>
           <Button variant="contained" disabled={false}>
             Заказать звонок

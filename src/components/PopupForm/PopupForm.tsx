@@ -120,43 +120,59 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
               Далее
             </Button>
           )}
-        </Stack>
-        {currentQuestion === 7 && (
-          <Stack direction="column" spacing={2}>
-            <Typography variant="h3" color="primary" textAlign={'center'}>
-              Отправить анкету
-            </Typography>
-            <TextField
-              variant="standard"
-              label="Ваше имя"
-              color="primary"
-              sx={{ input: { color: 'primary.main' } }}
-            ></TextField>
-            <TextField
-              variant="standard"
-              label="Ваш телефон"
-              color="primary"
-              sx={{ input: { color: 'primary.main' } }}
-              helperText=""
-              type="phone"
-            ></TextField>
-            <Button variant="contained">Отправить анкету</Button>
-            <Typography
-              variant="h3"
-              color="primary"
-              textAlign={'center'}
-              sx={{
-                fontSize: '10px',
-                '@media (max-width:500px)': {
+          {currentQuestion === 7 && (
+            <>
+              <Typography variant="h3" color="primary" textAlign={'center'}>
+                Отправить анкету
+              </Typography>
+              <TextField
+                variant="standard"
+                label="Ваше имя"
+                color="primary"
+                sx={{
+                  input: {
+                    color: 'primary.main',
+                    borderBottom: '1px solid white',
+                  },
+                  label: {
+                    color: 'primary.contrastText',
+                  },
+                }}
+              ></TextField>
+              <TextField
+                variant="standard"
+                label="Ваш телефон"
+                color="primary"
+                sx={{
+                  input: {
+                    color: 'primary.main',
+                    borderBottom: '1px solid white',
+                  },
+                  label: {
+                    color: 'primary.contrastText',
+                  },
+                }}
+                helperText=""
+                type="phone"
+              ></TextField>
+              <Button variant="contained">Отправить анкету</Button>
+              <Typography
+                variant="h3"
+                color="primary"
+                textAlign={'center'}
+                sx={{
                   fontSize: '10px',
-                },
-              }}
-            >
-              отправляя свои данные вы соглашаетесь с политикой
-              конфиденциальности
-            </Typography>
-          </Stack>
-        )}
+                  '@media (max-width:500px)': {
+                    fontSize: '10px',
+                  },
+                }}
+              >
+                отправляя свои данные вы соглашаетесь с политикой
+                конфиденциальности
+              </Typography>
+            </>
+          )}
+        </Stack>
       </Box>
     </Modal>
   )

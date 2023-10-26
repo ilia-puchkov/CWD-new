@@ -21,7 +21,15 @@ function QuestionsPopupForm({ question }: QuestionsPopupFormProps) {
         variant="standard"
         label="Ваш ответ"
         color="primary"
-        sx={{ input: { color: 'primary.main' } }}
+        sx={{
+          input: {
+            color: 'primary.main',
+            borderBottom: '1px solid white',
+          },
+          label: {
+            color: 'primary.contrastText',
+          },
+        }}
       ></TextField>
     </>
   )
