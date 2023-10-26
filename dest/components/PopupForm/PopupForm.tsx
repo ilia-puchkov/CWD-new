@@ -10,6 +10,7 @@ import {
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import pageAboutUsBackground from '../../images/about-background.png'
+import QuestionsPopupForm from './QuestionsPopupForm'
 
 const style = {
   position: 'absolute',
@@ -46,6 +47,22 @@ interface PopupFormProps {
   onClose: () => void
 }
 
+const textToView = new Map<number, string>([
+  [0, 'Ничего'],
+  [1, '1. По какому поводу мероприятие?'],
+  [2, '2. Желаемая дата и время мероприятия'],
+  [3, '3. Бюджетные рамки'],
+  [4, '4. Какую атмосферу праздника вы бы хотели создать?'],
+  [
+    5,
+    '5. Увлечения/хобби и то, что очень любит человек, для которого устраиваем мероприятие',
+  ],
+  [
+    6,
+    '6. Что-то важное, что по вашему мнению нам нужно знать (аллергия, фобии, физические ограничения...)',
+  ],
+])
+
 function PopupForm({ isOpen, onClose }: PopupFormProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0)
 
@@ -81,127 +98,81 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
             </Typography>
           )}
           {currentQuestion === 1 && (
-            <>
-              <Typography variant="h3" sx={typoStyle}>
-                1. По какому поводу мероприятие?
-              </Typography>
-              <TextField
-                variant="standard"
-                label="Ваш ответ"
-                color="primary"
-                sx={{ input: { color: 'primary.main' } }}
-              ></TextField>
-            </>
+            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
           )}
           {currentQuestion === 2 && (
-            <>
-              <Typography variant="h3" sx={typoStyle}>
-                2. Желаемая дата и время мероприятия
-              </Typography>
-              <TextField
-                variant="standard"
-                label="Ваш ответ"
-                color="primary"
-                sx={{ input: { color: 'primary.main' } }}
-              ></TextField>
-            </>
+            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
           )}
           {currentQuestion === 3 && (
-            <>
-              <Typography variant="h3" sx={typoStyle}>
-                3. Бюджетные рамки
-              </Typography>
-              <TextField
-                variant="standard"
-                label="Ваш ответ"
-                color="primary"
-                sx={{ input: { color: 'primary.main' } }}
-              ></TextField>
-            </>
+            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
           )}
           {currentQuestion === 4 && (
-            <>
-              <Typography variant="h3" sx={typoStyle}>
-                4. Какую атмосферу праздника вы бы хотели создать?
-              </Typography>
-              <TextField
-                variant="standard"
-                label="Ваш ответ"
-                color="primary"
-                sx={{ input: { color: 'primary.main' } }}
-              ></TextField>
-            </>
+            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
           )}
           {currentQuestion === 5 && (
-            <>
-              <Typography variant="h3" sx={typoStyle}>
-                5. Увлечения/хобби и то, что очень любит человек, для которого
-                устраиваем мероприятие
-              </Typography>
-              <TextField
-                variant="standard"
-                label="Ваш ответ"
-                color="primary"
-                sx={{ input: { color: 'primary.main' } }}
-              ></TextField>
-            </>
+            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
           )}
           {currentQuestion === 6 && (
-            <>
-              <Typography variant="h3" sx={typoStyle}>
-                6. Что-то важное, что по вашему мнению нам нужно знать
-                (аллергия, фобии, физические ограничения...)
-              </Typography>
-              <TextField
-                variant="standard"
-                label="Ваш ответ"
-                color="primary"
-                sx={{ input: { color: 'primary.main' } }}
-              ></TextField>
-            </>
+            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
           )}
           {currentQuestion <= 6 && (
             <Button variant="outlined" onClick={handleNextQuestion}>
               Далее
             </Button>
           )}
-        </Stack>
-        {currentQuestion === 7 && (
-          <Stack direction="column" spacing={2}>
-            <Typography variant="h3" color="primary" textAlign={'center'}>
-              Отправить анкету
-            </Typography>
-            <TextField
-              variant="standard"
-              label="Ваше имя"
-              color="primary"
-              sx={{ input: { color: 'primary.main' } }}
-            ></TextField>
-            <TextField
-              variant="standard"
-              label="Ваш телефон"
-              color="primary"
-              sx={{ input: { color: 'primary.main' } }}
-              helperText=""
-              type="phone"
-            ></TextField>
-            <Button variant="contained">Отправить анкету</Button>
-            <Typography
-              variant="h3"
-              color="primary"
-              textAlign={'center'}
-              sx={{
-                fontSize: '10px',
-                '@media (max-width:500px)': {
+          {currentQuestion === 7 && (
+            <>
+              <Typography variant="h3" color="primary" textAlign={'center'}>
+                Отправить анкету
+              </Typography>
+              <TextField
+                variant="standard"
+                label="Ваше имя"
+                color="primary"
+                sx={{
+                  input: {
+                    color: 'primary.main',
+                    borderBottom: '1px solid white',
+                  },
+                  label: {
+                    color: 'primary.contrastText',
+                  },
+                }}
+              ></TextField>
+              <TextField
+                variant="standard"
+                label="Ваш телефон"
+                color="primary"
+                sx={{
+                  input: {
+                    color: 'primary.main',
+                    borderBottom: '1px solid white',
+                  },
+                  label: {
+                    color: 'primary.contrastText',
+                  },
+                }}
+                helperText=""
+                type="phone"
+              ></TextField>
+              <Button variant="contained">Отправить анкету</Button>
+              <Typography
+                variant="h3"
+                color="primary"
+                textAlign={'center'}
+                sx={{
                   fontSize: '10px',
-                },
-              }}
-            >
-              отправляя свои данные вы соглашаетесь с политикой
-              конфиденциальности
-            </Typography>
-          </Stack>
-        )}
+                  '@media (max-width:500px)': {
+                    fontSize: '10px',
+                  },
+                }}
+              >
+                отправляя свои данные вы соглашаетесь с политикой
+                конфиденциальности
+              </Typography>
+            </>
+          )}
+        </Stack>
       </Box>
     </Modal>
   )

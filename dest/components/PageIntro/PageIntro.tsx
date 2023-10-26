@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Typography, Button, Stack } from '@mui/material'
-import pageLogo from '../../images/cwd-logo.png'
+import pageLogo from '../../images/calendar.png'
 
 interface PageIntroProps {
   onPopupFormClick: () => void

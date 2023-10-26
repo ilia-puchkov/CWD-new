@@ -8,7 +8,7 @@ interface FooterProps {
 
 function Footer({ onPopupCallClick }: FooterProps) {
   return (
-    <Box component="footer" id="contacts" mt={5} pb={2}>
+    <Box component="footer" id="contacts" pt={5} pb={2}>
       <Typography variant="h2" color="primary.main" mb={1} textAlign={'center'}>
         Остались вопросы?
       </Typography>
