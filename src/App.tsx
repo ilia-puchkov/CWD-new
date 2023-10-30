@@ -12,6 +12,11 @@ import pageTheme from './utils/pageTheme'
 import backgroundNoise from './images/page-background.png'
 import PopupForm from './components/PopupForm/PopupForm'
 
+interface IContactData {
+  name?: string
+  phone?: string
+}
+
 export function App() {
   const [isPopupCallOpen, setIsPopupCallOpen] = useState(false)
   const [isPopupFormOpen, setIsPopupFormOpen] = useState(false)
@@ -27,6 +32,10 @@ export function App() {
   function handleAllPopupClose() {
     setIsPopupCallOpen(false)
     setIsPopupFormOpen(false)
+  }
+
+  function handleCallSubmit(contactData: IContactData) {
+    console.log(contactData)
   }
 
   return (
@@ -48,7 +57,11 @@ export function App() {
         <PageGallery />
         <Footer onPopupCallClick={handlePopupCallOpen} />
 
-        <PopupCall isOpen={isPopupCallOpen} onClose={handleAllPopupClose} />
+        <PopupCall
+          isOpen={isPopupCallOpen}
+          onClose={handleAllPopupClose}
+          onSubmit={handleCallSubmit}
+        />
         <PopupForm isOpen={isPopupFormOpen} onClose={handleAllPopupClose} />
       </Container>
     </ThemeProvider>

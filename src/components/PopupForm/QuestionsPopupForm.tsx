@@ -7,6 +7,17 @@ const typoStyle = {
   fontSize: '20px',
 }
 
+const inputStyle = {
+  input: {
+    color: 'primary.main',
+    borderBottom: '1px solid white',
+    borderRadius: 0,
+  },
+  label: {
+    color: 'primary.contrastText',
+  },
+}
+
 interface QuestionsPopupFormProps {
   question: string | undefined
 }
@@ -21,15 +32,7 @@ function QuestionsPopupForm({ question }: QuestionsPopupFormProps) {
         variant="standard"
         label="Ваш ответ"
         color="primary"
-        sx={{
-          input: {
-            color: 'primary.main',
-            borderBottom: '1px solid white',
-          },
-          label: {
-            color: 'primary.contrastText',
-          },
-        }}
+        sx={inputStyle}
       ></TextField>
     </>
   )
