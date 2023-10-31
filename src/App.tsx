@@ -17,6 +17,17 @@ interface IContactData {
   phone?: string
 }
 
+interface IFormData {
+  name: string
+  phone: string
+  question1?: string
+  question2?: string
+  question3?: string
+  question4?: string
+  question5?: string
+  question6?: string
+}
+
 export function App() {
   const [isPopupCallOpen, setIsPopupCallOpen] = useState(false)
   const [isPopupFormOpen, setIsPopupFormOpen] = useState(false)
@@ -36,6 +47,10 @@ export function App() {
 
   function handleCallSubmit(contactData: IContactData) {
     console.log(contactData)
+  }
+
+  function handleFormSubmit(formData: IFormData) {
+    console.log(formData)
   }
 
   return (
@@ -62,7 +77,11 @@ export function App() {
           onClose={handleAllPopupClose}
           onSubmit={handleCallSubmit}
         />
-        <PopupForm isOpen={isPopupFormOpen} onClose={handleAllPopupClose} />
+        <PopupForm
+          isOpen={isPopupFormOpen}
+          onClose={handleAllPopupClose}
+          onSubmit={handleFormSubmit}
+        />
       </Container>
     </ThemeProvider>
   )

@@ -9,71 +9,47 @@ import {
   Typography,
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import pageAboutUsBackground from '../../images/about-background.png'
+import questionsToView from './QuestionsMap'
+import useFormValidation from '../../utils/formValidation'
+import { formStyle, typoStyle, inputStyle } from './formStyles'
 import QuestionsPopupForm from './QuestionsPopupForm'
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  height: '500px',
-  width: '450px',
-  '@media (max-width:500px)': {
-    width: '340px',
-  },
-  bgcolor: 'black',
-  border: '2px solid #000',
-  borderRadius: '10px',
-  boxShadow: 4,
-  p: 5,
-  pt: 2,
-  backgroundImage: `url(${pageAboutUsBackground})`,
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-}
-
-const typoStyle = {
-  color: 'primary.main',
-  textAlign: 'center',
-  fontSize: '20px',
+interface IFormData {
+  name: string
+  phone: string
+  question1?: string
+  question2?: string
+  question3?: string
+  question4?: string
+  question5?: string
+  question6?: string
 }
 
 interface PopupFormProps {
   isOpen: boolean
   onClose: () => void
+  onSubmit: (values: IFormData) => void
 }
 
-const textToView = new Map<number, string>([
-  [0, 'Ничего'],
-  [1, '1. По какому поводу мероприятие?'],
-  [2, '2. Желаемая дата и время мероприятия'],
-  [3, '3. Бюджетные рамки'],
-  [4, '4. Какую атмосферу праздника вы бы хотели создать?'],
-  [
-    5,
-    '5. Увлечения/хобби и то, что очень любит человек, для которого устраиваем мероприятие',
-  ],
-  [
-    6,
-    '6. Что-то важное, что по вашему мнению нам нужно знать (аллергия, фобии, физические ограничения...)',
-  ],
-])
-
-function PopupForm({ isOpen, onClose }: PopupFormProps) {
+function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
+  const { handleChange, errors, values, resetForm } = useFormValidation()
   const [currentQuestion, setCurrentQuestion] = useState(0)
+
+  function handleNextQuestion() {
+    const nextQuestion = currentQuestion + 1
+    setCurrentQuestion(nextQuestion)
+  }
 
   function handleClose() {
     setCurrentQuestion(0)
     onClose()
   }
 
-  function handleNextQuestion() {
-    const nextQuestion = currentQuestion + 1
-    setCurrentQuestion(nextQuestion)
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    onSubmit(values)
+    resetForm()
+    handleClose()
   }
 
   return (
@@ -82,7 +58,7 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={style}>
+      <Box sx={formStyle} component="form" onSubmit={handleSubmit}>
         <IconButton
           onClick={handleClose}
           size="medium"
@@ -92,28 +68,59 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
           <CloseIcon />
         </IconButton>
         <Stack direction="column" spacing={2}>
+          {/* {questionsToView.get(currentQuestion)} */}
           {currentQuestion === 0 && (
             <Typography variant="h3" sx={typoStyle}>
               Узнаем ваши предпочтения и организуем уникальное мероприятие!
             </Typography>
           )}
           {currentQuestion === 1 && (
-            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
+            <QuestionsPopupForm
+              questionNumber={1}
+              questionText={'lalalal'}
+              onChange={handleChange}
+              value={values.question1 || ''}
+            />
           )}
           {currentQuestion === 2 && (
-            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
+            <QuestionsPopupForm
+              questionNumber={2}
+              questionText={'lalalal'}
+              onChange={handleChange}
+              value={values.question2 || ''}
+            />
           )}
           {currentQuestion === 3 && (
-            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
+            <QuestionsPopupForm
+              questionNumber={3}
+              questionText={'lalalal'}
+              onChange={handleChange}
+              value={values.question3 || ''}
+            />
           )}
           {currentQuestion === 4 && (
-            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
+            <QuestionsPopupForm
+              questionNumber={4}
+              questionText={'lalalal'}
+              onChange={handleChange}
+              value={values.question4 || ''}
+            />
           )}
           {currentQuestion === 5 && (
-            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
+            <QuestionsPopupForm
+              questionNumber={5}
+              questionText={'lalalal'}
+              onChange={handleChange}
+              value={values.question5 || ''}
+            />
           )}
           {currentQuestion === 6 && (
-            <QuestionsPopupForm question={textToView.get(currentQuestion)} />
+            <QuestionsPopupForm
+              questionNumber={6}
+              questionText={'lalalal'}
+              onChange={handleChange}
+              value={values.question6 || ''}
+            />
           )}
           {currentQuestion <= 6 && (
             <Button variant="outlined" onClick={handleNextQuestion}>
@@ -126,36 +133,37 @@ function PopupForm({ isOpen, onClose }: PopupFormProps) {
                 Отправить анкету
               </Typography>
               <TextField
+                onChange={handleChange}
                 variant="standard"
-                label="Ваше имя"
                 color="primary"
-                sx={{
-                  input: {
-                    color: 'primary.main',
-                    borderBottom: '1px solid white',
-                  },
-                  label: {
-                    color: 'primary.contrastText',
-                  },
+                sx={inputStyle}
+                type="text"
+                label="Ваше имя"
+                name="name"
+                value={values.name || ''}
+                inputProps={{
+                  minLength: 2,
                 }}
+                helperText={errors.name}
+                error={errors.name ? true : false}
+                required
               ></TextField>
               <TextField
+                onChange={handleChange}
                 variant="standard"
-                label="Ваш телефон"
                 color="primary"
-                sx={{
-                  input: {
-                    color: 'primary.main',
-                    borderBottom: '1px solid white',
-                  },
-                  label: {
-                    color: 'primary.contrastText',
-                  },
-                }}
-                helperText=""
-                type="phone"
+                sx={inputStyle}
+                type="tel"
+                label="Ваш телефон"
+                name="phone"
+                value={values.phone || ''}
+                helperText={errors.phone}
+                error={errors.phone ? true : false}
+                required
               ></TextField>
-              <Button variant="contained">Отправить анкету</Button>
+              <Button variant="contained" type="submit">
+                Отправить анкету
+              </Button>
               <Typography
                 variant="h3"
                 color="primary"
