@@ -1,34 +1,32 @@
 import React from 'react'
 import { TextField, Typography } from '@mui/material'
 import { typoStyle, inputStyle } from './formStyles'
+import useFormValidation from '../../utils/formValidation'
 
 interface QuestionsPopupFormProps {
   questionNumber: number
   questionText: string | undefined
-  onChange: () => void
-  value: any
 }
 
 function QuestionsPopupForm({
   questionNumber,
   questionText,
-  onChange,
-  value,
 }: QuestionsPopupFormProps) {
+  const { handleChange, values } = useFormValidation()
   return (
     <>
       <Typography variant="h3" sx={typoStyle}>
         {questionText}
       </Typography>
       <TextField
-        onChange={onChange}
+        onChange={handleChange}
         variant="standard"
         color="primary"
         sx={inputStyle}
         type="text"
         label="Ваш ответ"
         name={`question${questionNumber}`}
-        value={value}
+        value={values.questionNumber || ''}
       ></TextField>
     </>
   )

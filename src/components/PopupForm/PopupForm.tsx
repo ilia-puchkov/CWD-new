@@ -11,8 +11,7 @@ import {
 import CloseIcon from '@mui/icons-material/Close'
 import questionsToView from './QuestionsMap'
 import useFormValidation from '../../utils/formValidation'
-import { formStyle, typoStyle, inputStyle } from './formStyles'
-import QuestionsPopupForm from './QuestionsPopupForm'
+import { formStyle, inputStyle } from './formStyles'
 
 interface IFormData {
   name: string
@@ -68,60 +67,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           <CloseIcon />
         </IconButton>
         <Stack direction="column" spacing={2}>
-          {/* {questionsToView.get(currentQuestion)} */}
-          {currentQuestion === 0 && (
-            <Typography variant="h3" sx={typoStyle}>
-              Узнаем ваши предпочтения и организуем уникальное мероприятие!
-            </Typography>
-          )}
-          {currentQuestion === 1 && (
-            <QuestionsPopupForm
-              questionNumber={1}
-              questionText={'lalalal'}
-              onChange={handleChange}
-              value={values.question1 || ''}
-            />
-          )}
-          {currentQuestion === 2 && (
-            <QuestionsPopupForm
-              questionNumber={2}
-              questionText={'lalalal'}
-              onChange={handleChange}
-              value={values.question2 || ''}
-            />
-          )}
-          {currentQuestion === 3 && (
-            <QuestionsPopupForm
-              questionNumber={3}
-              questionText={'lalalal'}
-              onChange={handleChange}
-              value={values.question3 || ''}
-            />
-          )}
-          {currentQuestion === 4 && (
-            <QuestionsPopupForm
-              questionNumber={4}
-              questionText={'lalalal'}
-              onChange={handleChange}
-              value={values.question4 || ''}
-            />
-          )}
-          {currentQuestion === 5 && (
-            <QuestionsPopupForm
-              questionNumber={5}
-              questionText={'lalalal'}
-              onChange={handleChange}
-              value={values.question5 || ''}
-            />
-          )}
-          {currentQuestion === 6 && (
-            <QuestionsPopupForm
-              questionNumber={6}
-              questionText={'lalalal'}
-              onChange={handleChange}
-              value={values.question6 || ''}
-            />
-          )}
+          {questionsToView.get(currentQuestion)}
           {currentQuestion <= 6 && (
             <Button variant="outlined" onClick={handleNextQuestion}>
               Далее
