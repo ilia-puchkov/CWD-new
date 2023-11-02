@@ -11,6 +11,13 @@ import { Container, CssBaseline, ThemeProvider } from '@mui/material'
 import pageTheme from './utils/pageTheme'
 import backgroundNoise from './images/page-background.png'
 import PopupForm from './components/PopupForm/PopupForm'
+import emailjs from 'emailjs-com'
+import {
+  contactService,
+  contactTemplate,
+  publicKey,
+  questionsTemplate,
+} from './utils/mailUtils'
 
 interface IContactData {
   name?: string
@@ -46,11 +53,21 @@ export function App() {
   }
 
   function handleCallSubmit(contactData: IContactData) {
-    console.log(contactData)
+    emailjs
+      .send(contactService, contactTemplate, contactData, publicKey)
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => console.log(err))
   }
 
   function handleFormSubmit(formData: IFormData) {
-    console.log(formData)
+    emailjs
+      .send(contactService, questionsTemplate, formData, publicKey)
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => console.log(err))
   }
 
   return (

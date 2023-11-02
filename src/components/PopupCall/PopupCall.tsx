@@ -24,7 +24,8 @@ interface PopupCallProps {
 }
 
 function PopupCall({ isOpen, onClose, onSubmit }: PopupCallProps) {
-  const { handleChange, errors, values, resetForm } = useFormValidation()
+  const { handleChange, errors, values, resetForm, isValid } =
+    useFormValidation()
 
   function handleClose() {
     resetForm()
@@ -92,7 +93,7 @@ function PopupCall({ isOpen, onClose, onSubmit }: PopupCallProps) {
             error={errors.phone ? true : false}
             required
           ></TextField>
-          <Button variant="contained" type="submit" disabled={false}>
+          <Button variant="contained" type="submit" disabled={!isValid}>
             Заказать звонок
           </Button>
           <Typography

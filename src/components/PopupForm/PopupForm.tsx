@@ -9,7 +9,6 @@ import {
   Typography,
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import questionsToView from './QuestionsMap'
 import useFormValidation from '../../utils/formValidation'
 import { formStyle, typoStyle, inputStyle } from './formStyles'
 import QuestionsPopupForm from './QuestionsPopupForm'
@@ -32,7 +31,8 @@ interface PopupFormProps {
 }
 
 function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
-  const { handleChange, errors, values, resetForm } = useFormValidation()
+  const { handleChange, errors, values, resetForm, isValid } =
+    useFormValidation()
   const [currentQuestion, setCurrentQuestion] = useState(0)
 
   function handleNextQuestion() {
@@ -68,7 +68,6 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           <CloseIcon />
         </IconButton>
         <Stack direction="column" spacing={2}>
-          {/* {questionsToView.get(currentQuestion)} */}
           {currentQuestion === 0 && (
             <Typography variant="h3" sx={typoStyle}>
               Узнаем ваши предпочтения и организуем уникальное мероприятие!
@@ -77,7 +76,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 1 && (
             <QuestionsPopupForm
               questionNumber={1}
-              questionText={'lalalal'}
+              questionText={'1. По какому поводу мероприятие?'}
               onChange={handleChange}
               value={values.question1 || ''}
             />
@@ -85,7 +84,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 2 && (
             <QuestionsPopupForm
               questionNumber={2}
-              questionText={'lalalal'}
+              questionText={'2. Желаемая дата и время мероприятия'}
               onChange={handleChange}
               value={values.question2 || ''}
             />
@@ -93,7 +92,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 3 && (
             <QuestionsPopupForm
               questionNumber={3}
-              questionText={'lalalal'}
+              questionText={'3. Бюджетные рамки'}
               onChange={handleChange}
               value={values.question3 || ''}
             />
@@ -101,7 +100,9 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 4 && (
             <QuestionsPopupForm
               questionNumber={4}
-              questionText={'lalalal'}
+              questionText={
+                '4. Какую атмосферу праздника вы бы хотели создать?'
+              }
               onChange={handleChange}
               value={values.question4 || ''}
             />
@@ -109,7 +110,9 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 5 && (
             <QuestionsPopupForm
               questionNumber={5}
-              questionText={'lalalal'}
+              questionText={
+                '5. Увлечения/хобби и то, что очень любит человек, для которого устраиваем мероприятие'
+              }
               onChange={handleChange}
               value={values.question5 || ''}
             />
@@ -117,7 +120,9 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 6 && (
             <QuestionsPopupForm
               questionNumber={6}
-              questionText={'lalalal'}
+              questionText={
+                '6. Что-то важное, что по вашему мнению нам нужно знать'
+              }
               onChange={handleChange}
               value={values.question6 || ''}
             />
@@ -161,7 +166,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
                 error={errors.phone ? true : false}
                 required
               ></TextField>
-              <Button variant="contained" type="submit">
+              <Button variant="contained" type="submit" disabled={!isValid}>
                 Отправить анкету
               </Button>
               <Typography
