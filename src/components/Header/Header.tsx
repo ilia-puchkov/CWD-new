@@ -11,7 +11,6 @@ import {
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import logo from '../../images/cwd-logo.png'
-import background from '../../images/pageTopBackground.jpg'
 
 interface HeaderProps {
   onPopupCallClick: () => void
@@ -137,31 +136,6 @@ function Header({ onPopupCallClick }: HeaderProps) {
             </Button>
           </MenuItem>
         </Menu>
-        <Box
-          sx={{
-            position: 'absolute',
-            top: '-15px',
-            left: '0px',
-            width: '100%',
-            height: '600px',
-            zIndex: '-1',
-            '@media (max-width:600px)': {
-              height: '290px',
-            },
-          }}
-        >
-          <img
-            src={background}
-            style={{
-              width: '100%',
-              height: '100%',
-              opacity: '0.8',
-              filter: 'blur(2px) brightness(0.8)',
-              boxShadow: '0px 0px 15px 15px grey',
-            }}
-            alt="back"
-          />
-        </Box>
       </Toolbar>
     </AppBar>
   )

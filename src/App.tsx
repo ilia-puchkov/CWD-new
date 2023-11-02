@@ -7,9 +7,8 @@ import PageGallery from './components/PageGallery/PageGallery'
 import PageExplanation from './components/PageExplanations/PageExplanation'
 import Footer from './components/Footer/Footer'
 import PageAboutUs from './components/PageAboutUs/PageAboutUs'
-import { Container, CssBaseline, ThemeProvider } from '@mui/material'
+import { Container, CssBaseline, ThemeProvider, Box } from '@mui/material'
 import pageTheme from './utils/pageTheme'
-import backgroundNoise from './images/page-background.png'
 import PopupForm from './components/PopupForm/PopupForm'
 import emailjs from 'emailjs-com'
 import {
@@ -18,6 +17,8 @@ import {
   publicKey,
   questionsTemplate,
 } from './utils/mailUtils'
+import background from './images/pageTopBackground.jpg'
+import { appBoxStyle, appContainerStyle, appTopImage } from './utils/appStyles'
 
 interface IContactData {
   name?: string
@@ -73,14 +74,11 @@ export function App() {
   return (
     <ThemeProvider theme={pageTheme}>
       <CssBaseline />
-      <Container
-        sx={{
-          backgroundImage: `url(${backgroundNoise})`,
-          '@media (max-width:600px)': {
-            padding: '5px',
-          },
-        }}
-      >
+      <Container sx={appContainerStyle}>
+        <Box sx={appBoxStyle}>
+          <img src={background} style={appTopImage} alt="back" />
+        </Box>
+
         <Header onPopupCallClick={handlePopupCallOpen} />
         <PageIntro onPopupFormClick={handlePopupFormOpen} />
         <PageEventFormats />
