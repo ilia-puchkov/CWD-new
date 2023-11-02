@@ -9,47 +9,45 @@ import {
   Typography,
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import pageAboutUsBackground from '../../images/about-background.png'
+import useFormValidation from '../../utils/formValidation'
+import { formStyle, inputStyle } from '../PopupForm/formStyles'
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  height: '500px',
-  width: '450px',
-  '@media (max-width:500px)': {
-    width: '340px',
-  },
-  bgcolor: 'black',
-  border: '2px solid #000',
-  borderRadius: '10px',
-  boxShadow: 4,
-  p: 5,
-  pt: 2,
-  backgroundImage: `url(${pageAboutUsBackground})`,
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
+interface IFormData {
+  name: string
+  phone: string
 }
 
 interface PopupCallProps {
   isOpen: boolean
   onClose: () => void
+  onSubmit: (values: IFormData) => void
 }
 
-function PopupCall({ isOpen, onClose }: PopupCallProps) {
+function PopupCall({ isOpen, onClose, onSubmit }: PopupCallProps) {
+  const { handleChange, errors, values, resetForm, isValid } =
+    useFormValidation()
+
+  function handleClose() {
+    resetForm()
+    onClose()
+  }
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    onSubmit(values)
+    resetForm()
+    onClose()
+  }
+
   return (
     <Modal
       open={isOpen}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={style}>
+      <Box sx={formStyle} component="form" onSubmit={handleSubmit}>
         <IconButton
-          onClick={onClose}
+          onClick={handleClose}
           size="medium"
           sx={{ marginBottom: '20px', marginLeft: 'auto' }}
           color="primary"
@@ -67,36 +65,35 @@ function PopupCall({ isOpen, onClose }: PopupCallProps) {
         </Typography>
         <Stack direction="column" spacing={4}>
           <TextField
+            onChange={handleChange}
             variant="standard"
-            label="Ваше имя"
             color="primary"
-            sx={{
-              input: {
-                color: 'primary.main',
-                borderBottom: '1px solid white',
-              },
-              label: {
-                color: 'primary.contrastText',
-              },
+            sx={inputStyle}
+            type="text"
+            label="Ваше имя"
+            name="name"
+            value={values.name || ''}
+            inputProps={{
+              minLength: 2,
             }}
+            helperText={errors.name}
+            error={errors.name ? true : false}
+            required
           ></TextField>
           <TextField
+            onChange={handleChange}
             variant="standard"
-            label="Ваш телефон"
             color="primary"
-            helperText=""
-            type="phone"
-            sx={{
-              input: {
-                color: 'primary.main',
-                borderBottom: '1px solid white',
-              },
-              label: {
-                color: 'primary.contrastText',
-              },
-            }}
+            sx={inputStyle}
+            type="tel"
+            label="Ваш телефон"
+            name="phone"
+            value={values.phone || ''}
+            helperText={errors.phone}
+            error={errors.phone ? true : false}
+            required
           ></TextField>
-          <Button variant="contained" disabled={false}>
+          <Button variant="contained" type="submit" disabled={!isValid}>
             Заказать звонок
           </Button>
           <Typography

@@ -1,35 +1,34 @@
 import React from 'react'
 import { TextField, Typography } from '@mui/material'
-
-const typoStyle = {
-  color: 'primary.main',
-  textAlign: 'center',
-  fontSize: '20px',
-}
+import { typoStyle, inputStyle } from './formStyles'
 
 interface QuestionsPopupFormProps {
-  question: string | undefined
+  questionNumber: number
+  questionText: string | undefined
+  onChange: () => void
+  value: any
 }
 
-function QuestionsPopupForm({ question }: QuestionsPopupFormProps) {
+function QuestionsPopupForm({
+  questionNumber,
+  questionText,
+  onChange,
+  value,
+}: QuestionsPopupFormProps) {
   return (
     <>
       <Typography variant="h3" sx={typoStyle}>
-        {question}
+        {questionText}
       </Typography>
       <TextField
+        onChange={onChange}
         variant="standard"
-        label="Ваш ответ"
         color="primary"
-        sx={{
-          input: {
-            color: 'primary.main',
-            borderBottom: '1px solid white',
-          },
-          label: {
-            color: 'primary.contrastText',
-          },
-        }}
+        sx={inputStyle}
+        type="text"
+        label="Ваш ответ"
+        name={`question${questionNumber}`}
+        value={value}
       ></TextField>
     </>
   )
