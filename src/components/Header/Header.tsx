@@ -53,6 +53,21 @@ function Header({ onPopupCallClick }: HeaderProps) {
         </Box>
         <Stack spacing={2} direction="row">
           <Button
+            variant="outlined"
+            color="secondary"
+            size="small"
+            sx={{
+              transition: '.7s ease-in-out',
+              ':hover': {
+                bgcolor: 'secondary.main',
+                color: 'white',
+              },
+            }}
+            href="/requests"
+          >
+            Requests
+          </Button>
+          <Button
             onClick={onPopupCallClick}
             variant="outlined"
             color="secondary"
