@@ -1,9 +1,22 @@
 import { Box, Button, Grid, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import Request from '../Request/Request'
-import { testRequests } from './TestRequests'
 
 function RequestsTable() {
+  const [requestsValues, setRequestsValues] = useState([])
+
+  function getData() {
+    fetch('http://localhost:5500/answers', {
+      method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'content-type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => setRequestsValues(res))
+  }
+
   return (
     <Box
       sx={{
@@ -34,6 +47,7 @@ function RequestsTable() {
         Requests
       </Typography>
       <Button
+        onClick={getData}
         variant="outlined"
         color="primary"
         size="small"
@@ -48,7 +62,7 @@ function RequestsTable() {
         get Requests
       </Button>
       <Grid container spacing={3} sx={{ justifyContent: 'center' }} my={4}>
-        {testRequests.map((request) => (
+        {requestsValues.map((request) => (
           <Request requestData={request} key={request._id} />
         ))}
       </Grid>

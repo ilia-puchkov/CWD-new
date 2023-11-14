@@ -1,5 +1,5 @@
 interface RequestFormat {
-  _id: string
+  _id?: string
   name: string
   phone: string
   question1?: string

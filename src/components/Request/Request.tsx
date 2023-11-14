@@ -21,7 +21,7 @@ function Request({ requestData }: IRequestProp) {
       }}
     >
       <Typography variant="h6" color={'primary'}>
-        Request #{requestData._id}
+        Request #
       </Typography>
       <Typography variant="body1" color={'primary'}>
         {requestData._id || 'No ID'}
