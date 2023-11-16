@@ -28,7 +28,7 @@ function QuestionsPopupForm({
         type="text"
         label="Ваш ответ"
         name={`question${questionNumber}`}
-        value={value}
+        value={value.name || ''}
       ></TextField>
     </>
   )

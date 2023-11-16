@@ -75,53 +75,15 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
               {questions[currentQuestion]}
             </Typography>
           )}
-          {currentQuestion === 1 && (
+          {currentQuestion > 0 && currentQuestion <= 6 ? (
             <QuestionsPopupForm
-              questionNumber={1}
+              questionNumber={currentQuestion}
               questionText={questions[currentQuestion]}
               onChange={handleChange}
-              value={values.question1 || ''}
+              value={values}
             />
-          )}
-          {currentQuestion === 2 && (
-            <QuestionsPopupForm
-              questionNumber={2}
-              questionText={questions[currentQuestion]}
-              onChange={handleChange}
-              value={values.question2 || ''}
-            />
-          )}
-          {currentQuestion === 3 && (
-            <QuestionsPopupForm
-              questionNumber={3}
-              questionText={questions[currentQuestion]}
-              onChange={handleChange}
-              value={values.question3 || ''}
-            />
-          )}
-          {currentQuestion === 4 && (
-            <QuestionsPopupForm
-              questionNumber={4}
-              questionText={questions[currentQuestion]}
-              onChange={handleChange}
-              value={values.question4 || ''}
-            />
-          )}
-          {currentQuestion === 5 && (
-            <QuestionsPopupForm
-              questionNumber={5}
-              questionText={questions[currentQuestion]}
-              onChange={handleChange}
-              value={values.question5 || ''}
-            />
-          )}
-          {currentQuestion === 6 && (
-            <QuestionsPopupForm
-              questionNumber={6}
-              questionText={questions[currentQuestion]}
-              onChange={handleChange}
-              value={values.question6 || ''}
-            />
+          ) : (
+            ''
           )}
           {currentQuestion <= 6 && (
             <Button variant="outlined" onClick={handleNextQuestion}>
