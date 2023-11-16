@@ -1,9 +1,10 @@
 import { Box, Button, Grid, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import Request from '../Request/Request'
+import { testRequests } from './TestRequests'
 
 function RequestsTable() {
-  const [requestsValues, setRequestsValues] = useState([])
+  const [requestsValues, setRequestsValues] = useState(testRequests)
 
   function getData() {
     fetch('http://localhost:5500/answers', {

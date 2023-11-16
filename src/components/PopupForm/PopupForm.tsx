@@ -12,6 +12,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import useFormValidation from '../../utils/formValidation'
 import { formStyle, typoStyle, inputStyle } from './formStyles'
 import QuestionsPopupForm from './QuestionsPopupForm'
+import formQuestions from './popupFormQuestions'
 
 interface IFormData {
   name: string
@@ -34,6 +35,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
   const { handleChange, errors, values, resetForm, isValid } =
     useFormValidation()
   const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [questions, setQuestions] = useState(formQuestions)
 
   function handleNextQuestion() {
     const nextQuestion = currentQuestion + 1
@@ -70,13 +72,13 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
         <Stack direction="column" spacing={2}>
           {currentQuestion === 0 && (
             <Typography variant="h3" sx={typoStyle}>
-              Узнаем ваши предпочтения и организуем уникальное мероприятие!
+              {questions[currentQuestion]}
             </Typography>
           )}
           {currentQuestion === 1 && (
             <QuestionsPopupForm
               questionNumber={1}
-              questionText={'1. По какому поводу мероприятие?'}
+              questionText={questions[currentQuestion]}
               onChange={handleChange}
               value={values.question1 || ''}
             />
@@ -84,7 +86,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 2 && (
             <QuestionsPopupForm
               questionNumber={2}
-              questionText={'2. Желаемая дата и время мероприятия'}
+              questionText={questions[currentQuestion]}
               onChange={handleChange}
               value={values.question2 || ''}
             />
@@ -92,7 +94,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 3 && (
             <QuestionsPopupForm
               questionNumber={3}
-              questionText={'3. Бюджетные рамки'}
+              questionText={questions[currentQuestion]}
               onChange={handleChange}
               value={values.question3 || ''}
             />
@@ -100,9 +102,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 4 && (
             <QuestionsPopupForm
               questionNumber={4}
-              questionText={
-                '4. Какую атмосферу праздника вы бы хотели создать?'
-              }
+              questionText={questions[currentQuestion]}
               onChange={handleChange}
               value={values.question4 || ''}
             />
@@ -110,9 +110,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 5 && (
             <QuestionsPopupForm
               questionNumber={5}
-              questionText={
-                '5. Увлечения/хобби и то, что очень любит человек, для которого устраиваем мероприятие'
-              }
+              questionText={questions[currentQuestion]}
               onChange={handleChange}
               value={values.question5 || ''}
             />
@@ -120,9 +118,7 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
           {currentQuestion === 6 && (
             <QuestionsPopupForm
               questionNumber={6}
-              questionText={
-                '6. Что-то важное, что по вашему мнению нам нужно знать'
-              }
+              questionText={questions[currentQuestion]}
               onChange={handleChange}
               value={values.question6 || ''}
             />
