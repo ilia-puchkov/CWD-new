@@ -14,6 +14,7 @@ function PageEventFormat({ format }: FormatProps) {
       sm={6}
       md={4}
       sx={{
+        display: 'flex',
         justifyContent: 'center',
         padding: 0,
         maxWidth: 300,
@@ -47,6 +48,7 @@ function PageEventFormat({ format }: FormatProps) {
             component="div"
             textAlign={'center'}
             color="primary"
+            sx={{ fontFamily: 'Merriweather', fontWeight: '600' }}
           >
             {format.name}
           </Typography>

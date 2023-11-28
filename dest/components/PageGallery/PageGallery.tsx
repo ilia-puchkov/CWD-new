@@ -11,16 +11,25 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
   }
 }
 
-function PageGallery() {
+function PageGallery({ onImageClick }) {
+  function handleImageClick(e: React.MouseEvent<HTMLButtonElement>) {
+    onImageClick(e.target)
+  }
   return (
-    <Box component="section" id="gallery" mt={5}>
-      <Typography variant="h2" color="primary" textAlign={'center'}>
+    <Box component="section" id="gallery" mt={8}>
+      <Typography
+        variant="h2"
+        color="primary"
+        textAlign={'center'}
+        sx={{ fontFamily: 'Merriweather' }}
+      >
         Галерея
       </Typography>
       <Typography
         variant="subtitle1"
         color="primary.contrastText"
         textAlign={'center'}
+        sx={{ fontWeight: '400' }}
       >
         Как может выглядеть Ваше событие
       </Typography>
@@ -32,6 +41,7 @@ function PageGallery() {
                 key={image.photo}
                 cols={image.cols || 1}
                 rows={image.rows || 1}
+                onClick={handleImageClick}
               >
                 <img
                   {...srcset(image.photo, 100, image.rows, image.cols)}

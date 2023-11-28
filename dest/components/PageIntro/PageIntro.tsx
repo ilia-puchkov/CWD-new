@@ -14,21 +14,19 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
       mt={8}
       display={'flex'}
       justifyContent={'center'}
+      padding={{ sx: '10px', md: '40px' }}
     >
-      <Stack
-        direction={{ sx: 'column', md: 'row' }}
-        padding={{ sx: '10px', md: '40px' }}
-      >
+      <Stack direction={{ sx: 'column', md: 'row' }}>
         <Box
           sx={{
-            maxWidth: '600px',
+            maxWidth: '700px',
             flexGrow: 1,
           }}
         >
           <Stack
             direction="column"
             justifyContent="center"
-            maxWidth={'650px'}
+            maxWidth={'700px'}
             sx={{
               '@media (max-width:900px)': {
                 marginLeft: 'auto',
@@ -36,13 +34,18 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
               },
             }}
           >
-            <Typography variant="h1" color="primary.main">
+            <Typography
+              variant="h1"
+              color="primary.main"
+              sx={{ fontFamily: 'Merriweather' }}
+            >
               С НАМИ ЛЮБОЙ ДЕНЬ - ПРАЗДНИК!
             </Typography>
             <Typography
               variant="subtitle1"
               color="primary.contrastText"
               sx={{
+                fontWeight: '500',
                 '@media (max-width:900px)': {
                   textAlign: 'center',
                 },
@@ -56,6 +59,7 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
               color="secondary"
               size="small"
               sx={{
+                transition: '.7s ease-in-out',
                 maxWidth: '170px',
                 ':hover': {
                   bgcolor: 'secondary.main',
