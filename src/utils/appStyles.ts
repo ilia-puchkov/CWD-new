@@ -22,10 +22,35 @@ const appBoxStyle = {
 
 const appTopImage = {
   width: '100%',
-  height: '100%',
+  height: '110%',
   opacity: '0.8',
   filter: 'blur(2px) brightness(0.8)',
-  boxShadow: '0px 25px 0px -2px grey',
+  // boxShadow: '0px 25px 0px -2px grey',
 }
 
-export { appBoxStyle, appContainerStyle, appTopImage }
+const imageModuleStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+}
+
+const imageNoduleBoxStyles = {
+  maxWidth: '75vw',
+  maxHeight: '75vh',
+  display: 'flex',
+  justifyItems: 'center',
+  flexDirection: 'column',
+}
+
+export {
+  appBoxStyle,
+  appContainerStyle,
+  appTopImage,
+  imageModuleStyles,
+  imageNoduleBoxStyles,
+}

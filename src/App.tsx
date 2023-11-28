@@ -19,6 +19,7 @@ import {
 } from './utils/mailUtils'
 import background from './images/pageTopBackground.jpg'
 import { appBoxStyle, appContainerStyle, appTopImage } from './utils/appStyles'
+import PopupWithImage from './components/PopupWithImage/PopupWithImage'
 
 interface IContactData {
   name?: string
@@ -39,6 +40,8 @@ interface IFormData {
 export function App() {
   const [isPopupCallOpen, setIsPopupCallOpen] = useState(false)
   const [isPopupFormOpen, setIsPopupFormOpen] = useState(false)
+  const [isPopupImageOpen, setIsPopupImageOpen] = useState(false)
+  const [selectedImage, setSelectedImage] = useState({})
 
   function handlePopupCallOpen() {
     setIsPopupCallOpen(true)
@@ -48,9 +51,16 @@ export function App() {
     setIsPopupFormOpen(true)
   }
 
+  function handleImageClick(imageData) {
+    setSelectedImage(imageData)
+    console.log(imageData)
+    setIsPopupImageOpen(true)
+  }
+
   function handleAllPopupClose() {
     setIsPopupCallOpen(false)
     setIsPopupFormOpen(false)
+    setIsPopupImageOpen(false)
   }
 
   function handleCallSubmit(contactData: IContactData) {
@@ -84,7 +94,7 @@ export function App() {
         <PageEventFormats />
         <PageAboutUs onPopupFormClick={handlePopupFormOpen} />
         <PageExplanation />
-        <PageGallery />
+        <PageGallery onImageClick={handleImageClick} />
         <Footer onPopupCallClick={handlePopupCallOpen} />
 
         <PopupCall
@@ -96,6 +106,12 @@ export function App() {
           isOpen={isPopupFormOpen}
           onClose={handleAllPopupClose}
           onSubmit={handleFormSubmit}
+        />
+
+        <PopupWithImage
+          image={selectedImage}
+          isOpen={isPopupImageOpen}
+          onClose={handleAllPopupClose}
         />
       </Container>
     </ThemeProvider>

@@ -46,7 +46,7 @@ function Header({ onPopupCallClick }: HeaderProps) {
       <Toolbar>
         <Box sx={{ flexGrow: 1 }}>
           <img
-            style={{ width: '70px', marginRight: '20px' }}
+            style={{ width: '100px', marginRight: '20px' }}
             src={logo}
             alt="page-logo"
           />

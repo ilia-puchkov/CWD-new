@@ -2,6 +2,7 @@ import { createTheme } from '@mui/material'
 
 const pageTheme = createTheme({
   typography: {
+    fontFamily: ['Montserrat', 'Merriweather', 'sans-serif'].join(','),
     h3: {
       fontSize: '2rem',
       color: 'red',
@@ -40,6 +41,15 @@ pageTheme.typography.h2 = {
   fontSize: '2.5rem',
   '@media (max-width:600px)': {
     fontSize: '1.5rem',
+    textAlign: 'center',
+  },
+}
+
+pageTheme.typography.h5 = {
+  fontSize: '1.5rem',
+  fontWeight: '400',
+  '@media (max-width:600px)': {
+    fontSize: '0.8rem',
     textAlign: 'center',
   },
 }

@@ -19,6 +19,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         padding: '20px 0 40px',
+        minHeight: '600px',
         '@media (max-width:600px)': {
           backgroundSize: 'cover',
           padding: '5px 10px',
@@ -35,7 +36,13 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           bgcolor: 'rgba(0, 0, 0, 0.2)',
           padding: '10px',
           zIndex: 2,
-          maxWidth: '400px',
+          maxWidth: '800px',
+          marginRight: '40px',
+          marginLeft: 'auto',
+          '@media (max-width:600px)': {
+            marginRight: '0',
+            marginLeft: '0',
+          },
         }}
       >
         <aside
@@ -51,6 +58,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
             color="primary.main"
             ml={1}
             sx={{
+              fontFamily: 'Merriweather',
               '@media (max-width:600px)': {
                 textAlign: 'left',
               },
@@ -63,6 +71,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
             color="primary.contrastText"
             mb={1}
             ml={1}
+            sx={{ fontFamily: 'Merriweather' }}
           >
             мы, Катя и Эрик - пара сумасшедших креативщиков, живущих по принципу
             &quot;для праздника не нужен повод &quot;!
@@ -97,7 +106,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
         >
           Присоединяйтесь к нам и Вы получите те ивенты, которыми похвастаетесь
           в соцсетях, а через много-много лет Ваши внуки будут наизусть знать
-          истории о ЛЕ-ГЕН-...подождите...подождите..-ДАР-НЫХ мероприятиях!
+          истории о ЛЕ-ГЕН- ...подождите ...подождите ..-ДАР-НЫХ мероприятиях!
         </Typography>
         <Button
           onClick={onPopupFormClick}
@@ -105,6 +114,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           color="primary"
           size="small"
           sx={{
+            transition: '.7s ease-in-out',
             margin: '20px auto 10px',
             zIndex: 2,
             ':hover': {

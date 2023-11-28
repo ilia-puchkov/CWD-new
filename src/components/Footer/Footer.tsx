@@ -9,7 +9,13 @@ interface FooterProps {
 function Footer({ onPopupCallClick }: FooterProps) {
   return (
     <Box component="footer" id="contacts" pt={5} pb={2}>
-      <Typography variant="h2" color="primary.main" mb={1} textAlign={'center'}>
+      <Typography
+        variant="h2"
+        color="primary.main"
+        mb={1}
+        textAlign={'center'}
+        sx={{ fontFamily: 'Merriweather' }}
+      >
         Остались вопросы?
       </Typography>
       <Box
@@ -42,14 +48,6 @@ function Footer({ onPopupCallClick }: FooterProps) {
             >
               Галерея
             </Button>
-            <Button
-              variant="text"
-              href="#contacts"
-              color="secondary"
-              size="small"
-            >
-              Контакты
-            </Button>
           </ButtonGroup>
         </Stack>
         <Stack
@@ -65,7 +63,7 @@ function Footer({ onPopupCallClick }: FooterProps) {
             color="primary"
             size="small"
             sx={{
-              maxWidth: '120px',
+              maxWidth: '125px',
               fontSize: '10px',
               transition: '.7s ease-in-out',
               ':hover': {
@@ -81,9 +79,6 @@ function Footer({ onPopupCallClick }: FooterProps) {
             src={logo}
             alt="footer-logo"
           />
-          <Typography variant="body1" color="primary" textAlign={'center'}>
-            Create wow Date
-          </Typography>
         </Stack>
         <Stack spacing={1} direction="column" justifyContent={'space-between'}>
           <ButtonGroup
@@ -92,7 +87,7 @@ function Footer({ onPopupCallClick }: FooterProps) {
           >
             <Button
               variant="text"
-              href="tel:+9971863733"
+              href="tel:+79175868087"
               size="small"
               color="secondary"
             >
@@ -101,17 +96,20 @@ function Footer({ onPopupCallClick }: FooterProps) {
             <Button
               variant="text"
               target="_blank"
-              href="#"
+              href="mailto: createwowdate@gmail.com"
               color="secondary"
               size="small"
             >
               Написать
             </Button>
-            <Button variant="text" href="#" color="secondary" size="small">
+            <Button
+              variant="text"
+              href="https://t.me/createwowdate"
+              target="_blank"
+              color="secondary"
+              size="small"
+            >
               Telegram
-            </Button>
-            <Button variant="text" href="#" color="secondary" size="small">
-              ВКонтакте
             </Button>
           </ButtonGroup>
         </Stack>
