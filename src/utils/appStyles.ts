@@ -40,11 +40,11 @@ const imageModuleStyles = {
 }
 
 const imageNoduleBoxStyles = {
-  maxWidth: '75vw',
-  maxHeight: '75vh',
+  maxWidth: '85vw',
   display: 'flex',
   justifyItems: 'center',
   flexDirection: 'column',
+  border: 'none',
 }
 
 export {

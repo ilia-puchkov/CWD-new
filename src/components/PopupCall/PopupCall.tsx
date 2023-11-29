@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import useFormValidation from '../../utils/formValidation'
+import useCallFormValidation from '../../utils/callFormValidation'
 import { formStyle, inputStyle } from '../PopupForm/formStyles'
 
 interface IFormData {
@@ -20,12 +20,12 @@ interface IFormData {
 interface PopupCallProps {
   isOpen: boolean
   onClose: () => void
-  onSubmit: (values: IFormData) => void
+  onSubmit: (values: IFormData) => object
 }
 
 function PopupCall({ isOpen, onClose, onSubmit }: PopupCallProps) {
   const { handleChange, errors, values, resetForm, isValid } =
-    useFormValidation()
+    useCallFormValidation()
 
   function handleClose() {
     resetForm()

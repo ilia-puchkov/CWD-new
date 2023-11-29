@@ -3,8 +3,13 @@ import { Box, IconButton, Modal } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { imageModuleStyles, imageNoduleBoxStyles } from '../../utils/appStyles'
 
+interface ImageData {
+  src: string
+  alt: string
+}
+
 interface PopupImageProps {
-  image: any
+  image: ImageData
   isOpen: boolean
   onClose: () => void
 }
@@ -30,7 +35,7 @@ function PopupWithImage({ image, isOpen, onClose }: PopupImageProps) {
         <img
           src={image.src}
           alt={image.alt}
-          style={{ maxWidth: '75vw', maxHeight: '75vh' }}
+          style={{ maxWidth: '85vw', maxHeight: '85vh' }}
         />
       </Box>
     </Modal>

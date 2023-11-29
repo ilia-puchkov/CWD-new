@@ -10,7 +10,7 @@ import PageAboutUs from './components/PageAboutUs/PageAboutUs'
 import { Container, CssBaseline, ThemeProvider, Box } from '@mui/material'
 import pageTheme from './utils/pageTheme'
 import PopupForm from './components/PopupForm/PopupForm'
-import emailjs from 'emailjs-com'
+import { send } from 'emailjs-com'
 import {
   contactService,
   contactTemplate,
@@ -22,8 +22,9 @@ import { appBoxStyle, appContainerStyle, appTopImage } from './utils/appStyles'
 import PopupWithImage from './components/PopupWithImage/PopupWithImage'
 
 interface IContactData {
-  name?: string
-  phone?: string
+  [key: string]: string
+  name: string
+  phone: string
 }
 
 interface IFormData {
@@ -35,6 +36,10 @@ interface IFormData {
   question4?: string
   question5?: string
   question6?: string
+}
+
+interface imageData {
+  image: object
 }
 
 export function App() {
@@ -51,9 +56,8 @@ export function App() {
     setIsPopupFormOpen(true)
   }
 
-  function handleImageClick(imageData) {
+  function handleImageClick(imageData: imageData) {
     setSelectedImage(imageData)
-    console.log(imageData)
     setIsPopupImageOpen(true)
   }
 
@@ -64,17 +68,16 @@ export function App() {
   }
 
   function handleCallSubmit(contactData: IContactData) {
-    emailjs
-      .send(contactService, contactTemplate, contactData, publicKey)
-      .then((res) => {
-        console.log(res)
-      })
-      .catch((err) => console.log(err))
+    console.log(contactData)
+    // send(contactService, contactTemplate, contactData, publicKey)
+    //   .then((res) => {
+    //     console.log(res)
+    //   })
+    //   .catch((err) => console.log(err))
   }
 
   function handleFormSubmit(formData: IFormData) {
-    emailjs
-      .send(contactService, questionsTemplate, formData, publicKey)
+    send(contactService, questionsTemplate, formData, publicKey)
       .then((res) => {
         console.log(res)
       })
