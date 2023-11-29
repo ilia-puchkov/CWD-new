@@ -80,7 +80,8 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
               questionNumber={currentQuestion}
               questionText={questions[currentQuestion]}
               onChange={handleChange}
-              value={values}
+              inputValue={currentQuestion}
+              formValues={values}
             />
           ) : (
             ''

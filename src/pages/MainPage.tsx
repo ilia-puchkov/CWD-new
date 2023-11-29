@@ -47,41 +47,42 @@ function MainPage() {
 
   function handleCallSubmit(contactData: IContactData) {
     console.log(contactData)
-    fetch('http://localhost:5500/answers', {
-      method: 'POST',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: contactData.name,
-        phone: contactData.phone,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res))
+    // fetch('http://localhost:5500/answers', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //     'content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     name: contactData.name,
+    //     phone: contactData.phone,
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((res) => console.log(res))
   }
 
   function handleFormSubmit(formData: IFormData) {
-    fetch('http://localhost:5500/answers', {
-      method: 'POST',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        phone: formData.phone,
-        question1: formData.question1 || '',
-        question2: formData.question2 || '',
-        question3: formData.question3 || '',
-        question4: formData.question4 || '',
-        question5: formData.question5 || '',
-        question6: formData.question6 || '',
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res))
+    console.log(formData)
+    // fetch('http://localhost:5500/answers', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //     'content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     name: formData.name,
+    //     phone: formData.phone,
+    //     question1: formData.question1 || '',
+    //     question2: formData.question2 || '',
+    //     question3: formData.question3 || '',
+    //     question4: formData.question4 || '',
+    //     question5: formData.question5 || '',
+    //     question6: formData.question6 || '',
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((res) => console.log(res))
   }
 
   return (

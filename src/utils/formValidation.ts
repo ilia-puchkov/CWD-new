@@ -7,7 +7,7 @@ function useFormValidation() {
   const [isValid, setIsValid] = useState(false)
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const name = e.target.name
+    const name: string = e.target.name
     const value = e.target.value
 
     setValues({

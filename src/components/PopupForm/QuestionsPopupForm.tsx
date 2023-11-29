@@ -1,19 +1,21 @@
-import React from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import { TextField, Typography } from '@mui/material'
 import { typoStyle, inputStyle } from './formStyles'
 
 interface QuestionsPopupFormProps {
   questionNumber: number
   questionText: string | undefined
-  onChange: () => void
-  value: any
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  inputValue: number
+  formValues: object
 }
 
 function QuestionsPopupForm({
   questionNumber,
   questionText,
   onChange,
-  value,
+  inputValue,
+  formValues,
 }: QuestionsPopupFormProps) {
   return (
     <>
@@ -28,7 +30,7 @@ function QuestionsPopupForm({
         type="text"
         label="Ваш ответ"
         name={`question${questionNumber}`}
-        value={value.name || ''}
+        value={formValues.questionNumber || ''}
       ></TextField>
     </>
   )
