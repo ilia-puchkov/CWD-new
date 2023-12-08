@@ -49,7 +49,7 @@ pageTheme.typography.h5 = {
   fontSize: '1.5rem',
   fontWeight: '400',
   '@media (max-width:600px)': {
-    fontSize: '0.8rem',
+    fontSize: '1.1rem',
     textAlign: 'center',
   },
 }

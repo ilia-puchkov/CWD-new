@@ -63,6 +63,11 @@ function Header({ onPopupCallClick }: HeaderProps) {
                 bgcolor: 'secondary.main',
                 color: 'white',
               },
+              '@media (max-width:500px)': {
+                fontSize: '11px',
+                lineHeight: '11px',
+                // height: '27px',
+              },
             }}
           >
             Заказать звонок
