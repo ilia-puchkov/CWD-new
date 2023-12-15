@@ -16,7 +16,7 @@ const appBoxStyle = {
   height: '600px',
   zIndex: '-1',
   '@media (max-width:600px)': {
-    height: '300px',
+    height: '400px',
   },
 }
 
