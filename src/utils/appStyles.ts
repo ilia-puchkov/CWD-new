@@ -25,6 +25,18 @@ const appTopImage = {
   height: '110%',
   opacity: '0.8',
   filter: 'blur(2px) brightness(0.8)',
+  zIndex: '-3',
+  // boxShadow: '0px 25px 0px -2px grey',
+}
+
+const appBotImage = {
+  position: 'absolute',
+  width: '200%',
+  height: '110%',
+  opacity: '1',
+  right: '0',
+  bottom: '0',
+  zIndex: '-2',
   // boxShadow: '0px 25px 0px -2px grey',
 }
 
@@ -53,4 +65,5 @@ export {
   appTopImage,
   imageModuleStyles,
   imageNoduleBoxStyles,
+  appBotImage,
 }

@@ -46,7 +46,7 @@ pageTheme.typography.h2 = {
 }
 
 pageTheme.typography.h5 = {
-  fontSize: '1.5rem',
+  fontSize: '1.3rem',
   fontWeight: '400',
   '@media (max-width:600px)': {
     fontSize: '1.1rem',

@@ -36,8 +36,8 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           bgcolor: 'rgba(0, 0, 0, 0.2)',
           padding: '10px',
           zIndex: 2,
-          maxWidth: '800px',
-          marginRight: '40px',
+          maxWidth: '600px',
+          marginRight: '110px',
           marginLeft: 'auto',
           '@media (max-width:600px)': {
             marginRight: '0',
@@ -82,6 +82,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           color="primary.contrastText"
           gutterBottom
           mb={2}
+          textAlign={'center'}
         >
           Все началось с оригинальных свиданий и организаций дней рождений друг
           для друга, а затем квартирники, массовые мероприятия, предсвадебная
@@ -93,6 +94,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           color="primary.contrastText"
           gutterBottom
           mb={2}
+          textAlign={'center'}
         >
           Теперь мы постоянно набираем обороты и не можем остановиться дарить
           яркие впечатления себе и всем вокруг.
@@ -103,6 +105,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           gutterBottom
           mb={2}
           zIndex={'2'}
+          textAlign={'center'}
         >
           Присоединяйтесь к нам и Вы получите те ивенты, которыми похвастаетесь
           в соцсетях, а через много-много лет Ваши внуки будут наизусть знать

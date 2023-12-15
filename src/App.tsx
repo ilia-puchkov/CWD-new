@@ -18,7 +18,13 @@ import {
   questionsTemplate,
 } from './utils/mailUtils'
 import background from './images/pageTopBackground.jpg'
-import { appBoxStyle, appContainerStyle, appTopImage } from './utils/appStyles'
+import backBot from './images/blur.svg'
+import {
+  appBoxStyle,
+  appContainerStyle,
+  appTopImage,
+  appBotImage,
+} from './utils/appStyles'
 import PopupWithImage from './components/PopupWithImage/PopupWithImage'
 
 interface IContactData {
@@ -68,12 +74,11 @@ export function App() {
   }
 
   function handleCallSubmit(contactData: IContactData) {
-    console.log(contactData)
-    // send(contactService, contactTemplate, contactData, publicKey)
-    //   .then((res) => {
-    //     console.log(res)
-    //   })
-    //   .catch((err) => console.log(err))
+    send(contactService, contactTemplate, contactData, publicKey)
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => console.log(err))
   }
 
   function handleFormSubmit(formData: IFormData) {
