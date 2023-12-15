@@ -20,6 +20,7 @@ interface HeaderProps {
 const headerButtonStyle = {
   width: '100%',
   margin: '0 5px',
+  minHeight: '30px',
   '&:hover': {
     background: 'none',
   },
@@ -30,6 +31,7 @@ const headerButtonStyle = {
 const headerButtonStyleLast = {
   width: '100%',
   margin: '0 5px',
+  minHeight: '30px',
   '&:hover': {
     background: 'none',
   },
@@ -124,7 +126,10 @@ function Header({ onPopupCallClick }: HeaderProps) {
           }}
           onClose={handleClose}
         >
-          <MenuItem onClick={handleClose} sx={{ padding: 0 }}>
+          <MenuItem
+            onClick={handleClose}
+            sx={{ padding: 0, minHeight: '20px' }}
+          >
             <Button
               variant="text"
               href="#formats"
@@ -135,7 +140,10 @@ function Header({ onPopupCallClick }: HeaderProps) {
               Форматы
             </Button>
           </MenuItem>
-          <MenuItem onClick={handleClose} sx={{ padding: 0 }}>
+          <MenuItem
+            onClick={handleClose}
+            sx={{ padding: 0, minHeight: '20px' }}
+          >
             <Button
               variant="text"
               href="#about"
@@ -146,7 +154,10 @@ function Header({ onPopupCallClick }: HeaderProps) {
               О нас
             </Button>
           </MenuItem>
-          <MenuItem onClick={handleClose} sx={{ padding: 0 }}>
+          <MenuItem
+            onClick={handleClose}
+            sx={{ padding: 0, minHeight: '20px' }}
+          >
             <Button
               variant="text"
               href="#gallery"
@@ -157,7 +168,10 @@ function Header({ onPopupCallClick }: HeaderProps) {
               Галерея
             </Button>
           </MenuItem>
-          <MenuItem onClick={handleClose} sx={{ padding: 0 }}>
+          <MenuItem
+            onClick={handleClose}
+            sx={{ padding: 0, minHeight: '20px' }}
+          >
             <Button
               variant="text"
               href="#contacts"
