@@ -11,8 +11,12 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
   }
 }
 
-function PageGallery({ onImageClick }) {
-  function handleImageClick(e: React.MouseEvent<HTMLButtonElement>) {
+interface IImagePopupProps {
+  onImageClick: (p: object) => object
+}
+
+function PageGallery({ onImageClick }: IImagePopupProps) {
+  function handleImageClick(e: React.UIEvent<HTMLElement>) {
     onImageClick(e.target)
   }
   return (

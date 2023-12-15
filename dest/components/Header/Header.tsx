@@ -11,6 +11,7 @@ import {
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import logo from '../../images/cwd-logo.png'
+import logo2 from '../../images/cwd-logo-2.png'
 
 interface HeaderProps {
   onPopupCallClick: () => void
@@ -22,11 +23,30 @@ const headerButtonStyle = {
   '&:hover': {
     background: 'none',
   },
+  borderTop: '1px solid #f02ed1',
+  borderRadius: '0',
+}
+
+const headerButtonStyleLast = {
+  width: '100%',
+  margin: '0 5px',
+  '&:hover': {
+    background: 'none',
+  },
+  borderTop: '1px solid #f02ed1',
+  borderBottom: '1px solid #f02ed1',
+  borderRadius: '0',
 }
 
 function Header({ onPopupCallClick }: HeaderProps) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const [currentLogo, setCurrentLogo] = useState(true)
   const open = Boolean(anchorEl)
+
+  function handleLogo() {
+    const currentState = currentLogo
+    setCurrentLogo(!currentState)
+  }
 
   function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
     setAnchorEl(event.currentTarget)
@@ -44,12 +64,20 @@ function Header({ onPopupCallClick }: HeaderProps) {
       sx={{ paddingTop: '10px' }}
     >
       <Toolbar>
-        <Box sx={{ flexGrow: 1 }}>
-          <img
-            style={{ width: '100px', marginRight: '20px' }}
-            src={logo}
-            alt="page-logo"
-          />
+        <Box sx={{ flexGrow: 1 }} onClick={handleLogo}>
+          {currentLogo ? (
+            <img
+              style={{ width: '110px', marginRight: '20px' }}
+              src={logo}
+              alt="page-logo"
+            />
+          ) : (
+            <img
+              style={{ width: '110px', marginRight: '20px' }}
+              src={logo2}
+              alt="page-logo2"
+            />
+          )}
         </Box>
         <Stack spacing={2} direction="row">
           <Button
@@ -62,6 +90,11 @@ function Header({ onPopupCallClick }: HeaderProps) {
               ':hover': {
                 bgcolor: 'secondary.main',
                 color: 'white',
+              },
+              '@media (max-width:500px)': {
+                fontSize: '11px',
+                lineHeight: '11px',
+                // height: '27px',
               },
             }}
           >
@@ -130,7 +163,7 @@ function Header({ onPopupCallClick }: HeaderProps) {
               href="#contacts"
               color="secondary"
               size="small"
-              sx={headerButtonStyle}
+              sx={headerButtonStyleLast}
             >
               Контакты
             </Button>
