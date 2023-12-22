@@ -8,7 +8,7 @@ function PageEventFormats() {
     <Box
       component="section"
       id="formats"
-      sx={{ display: 'flex', justifyContent: 'center' }}
+      sx={{ display: 'flex', justifyContent: 'center', margin: '10px 0 10px' }}
     >
       <Grid
         container
