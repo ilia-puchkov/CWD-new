@@ -48,9 +48,14 @@ const hr5Style = {
   },
 }
 
-const explanationDivisionStyle = 2
+const numberStyle = {
+  textShadow:
+    '-7px 0 10px #e60073, 0 7px 10px #e60073, 7px 0 10px #e60073, 0 -7px 10px #e60073',
+}
 
-const explanationSpacing = 2
+const explanationDivisionStyle = 1
+
+const explanationSpacing = 0.5
 
 export {
   hrStyle,
@@ -59,6 +64,7 @@ export {
   hr3Style,
   hr4Style,
   hr5Style,
+  numberStyle,
   explanationDivisionStyle,
   explanationSpacing,
 }

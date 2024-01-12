@@ -7,6 +7,7 @@ import {
   hr3Style,
   hr4Style,
   hr5Style,
+  numberStyle,
   explanationDivisionStyle,
   explanationSpacing,
 } from './PageExplanationsStyles'
@@ -36,7 +37,7 @@ function PageExplanation() {
         <Box sx={hr1Style}>
           <hr style={hrStyle}></hr>
         </Box>
-        <Typography variant="h5" color="secondary">
+        <Typography variant="h5" color="secondary" sx={numberStyle}>
           1
         </Typography>
         <Typography variant="h5" color="primary.contrastText">
@@ -53,7 +54,7 @@ function PageExplanation() {
         <Box sx={hr2Style}>
           <hr style={hrStyle}></hr>
         </Box>
-        <Typography variant="h5" color="secondary">
+        <Typography variant="h5" color="secondary" sx={numberStyle}>
           2
         </Typography>
         <Typography variant="h5" color="primary.contrastText">
@@ -70,7 +71,7 @@ function PageExplanation() {
         <Box sx={hr3Style}>
           <hr style={hrStyle}></hr>
         </Box>
-        <Typography variant="h5" color="secondary">
+        <Typography variant="h5" color="secondary" sx={numberStyle}>
           3
         </Typography>
         <Typography variant="h5" color="primary.contrastText">
@@ -87,7 +88,7 @@ function PageExplanation() {
         <Box sx={hr4Style}>
           <hr style={hrStyle}></hr>
         </Box>
-        <Typography variant="h5" color="secondary">
+        <Typography variant="h5" color="secondary" sx={numberStyle}>
           4
         </Typography>
         <Typography variant="h5" color="primary.contrastText">
@@ -104,7 +105,7 @@ function PageExplanation() {
         <Box sx={hr5Style}>
           <hr style={hrStyle}></hr>
         </Box>
-        <Typography variant="h5" color="secondary">
+        <Typography variant="h5" color="secondary" sx={numberStyle}>
           5
         </Typography>
         <Typography variant="h5" color="primary.contrastText">

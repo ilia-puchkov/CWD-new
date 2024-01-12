@@ -1,0 +1,13 @@
+.pageAboutUsImage {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  height: 100%;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .pageAboutUsImage {
+    left: 0%;
+  }
+}

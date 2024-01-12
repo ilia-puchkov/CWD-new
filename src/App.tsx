@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './App.css'
 import Header from './components/Header/Header'
 import PageIntro from './components/PageIntro/PageIntro'
 import PageEventFormats from './components/PageEventFormats/PageEventFormats'
@@ -26,6 +27,7 @@ import {
   appBotImage,
 } from './utils/appStyles'
 import PopupWithImage from './components/PopupWithImage/PopupWithImage'
+import pageLogotest from './images/backtest.png'
 
 interface IContactData {
   [key: string]: string
@@ -94,7 +96,7 @@ export function App() {
       <CssBaseline />
       <Container sx={appContainerStyle}>
         <Box sx={appBoxStyle}>
-          <img src={background} style={appTopImage} alt="back" />
+          <img src={pageLogotest} style={appTopImage} alt="back" />
         </Box>
 
         <Header onPopupCallClick={handlePopupCallOpen} />

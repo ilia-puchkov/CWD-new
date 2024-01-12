@@ -15,9 +15,9 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
       display={'flex'}
       justifyContent={'center'}
       sx={{
-        backgroundImage: `url(${pageAboutUsBackground})`,
-        backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
+        // backgroundImage: `url(${pageAboutUsBackground})`,
+        // backgroundSize: 'contain',
+        // backgroundRepeat: 'no-repeat',
         padding: '20px 0 40px',
         minHeight: '600px',
         '@media (max-width:600px)': {
@@ -26,6 +26,11 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
         },
       }}
     >
+      <img
+        src={pageAboutUsBackground}
+        className="pageAboutUsImage"
+        alt="about-us-background"
+      />
       <Box
         display={'flex'}
         flexDirection={'column'}
@@ -36,7 +41,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           bgcolor: 'rgba(0, 0, 0, 0.2)',
           padding: '10px',
           zIndex: 2,
-          maxWidth: '600px',
+          maxWidth: '500px',
           marginRight: '110px',
           marginLeft: 'auto',
           '@media (max-width:600px)': {
