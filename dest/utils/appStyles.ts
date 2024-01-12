@@ -22,7 +22,7 @@ const appBoxStyle = {
 
 const appTopImage = {
   width: '100%',
-  height: '110%',
+  height: '270%',
   opacity: '0.8',
   filter: 'blur(2px) brightness(0.8)',
   zIndex: '-3',
