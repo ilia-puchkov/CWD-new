@@ -53,7 +53,7 @@ const numberStyle = {
     '-7px 0 10px #e60073, 0 7px 10px #e60073, 7px 0 10px #e60073, 0 -7px 10px #e60073',
 }
 
-const explanationDivisionStyle = 1
+const explanationDivisionStyle = 3
 
 const explanationSpacing = 0.5
 

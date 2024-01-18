@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header/Header'
 import PageIntro from './components/PageIntro/PageIntro'
@@ -27,7 +27,8 @@ import {
   appBotImage,
 } from './utils/appStyles'
 import PopupWithImage from './components/PopupWithImage/PopupWithImage'
-import pageLogotest from './images/backtest.png'
+import pageLogoTest from './images/backtest.png'
+import pageTest from './images/testtest.png'
 
 interface IContactData {
   [key: string]: string
@@ -55,6 +56,22 @@ export function App() {
   const [isPopupFormOpen, setIsPopupFormOpen] = useState(false)
   const [isPopupImageOpen, setIsPopupImageOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState({})
+  const [backgroundImageSize, setBackgroundImageSize] = useState(true)
+
+  function backgroundImageCheck() {
+    const displaySize = window.innerWidth
+    if (displaySize > 600) {
+      setBackgroundImageSize(true)
+    } else if (displaySize < 600) {
+      setBackgroundImageSize(false)
+    }
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.addEventListener('resize', backgroundImageCheck)
+    }, 800)
+  })
 
   function handlePopupCallOpen() {
     setIsPopupCallOpen(true)
@@ -96,7 +113,11 @@ export function App() {
       <CssBaseline />
       <Container sx={appContainerStyle}>
         <Box sx={appBoxStyle}>
-          <img src={pageLogotest} style={appTopImage} alt="back" />
+          {backgroundImageSize ? (
+            <img src={pageLogoTest} style={appTopImage} alt="back" />
+          ) : (
+            <img src={pageTest} style={appTopImage} alt="back" />
+          )}
         </Box>
 
         <Header onPopupCallClick={handlePopupCallOpen} />
