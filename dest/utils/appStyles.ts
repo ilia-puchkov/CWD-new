@@ -26,7 +26,9 @@ const appTopImage = {
   opacity: '0.8',
   filter: 'blur(2px) brightness(0.8)',
   zIndex: '-3',
+  overflow: 'hidden',
   '@media (max-width:600px)': {
+    width: '150%',
     height: '200%',
   },
 }
