@@ -23,8 +23,8 @@ const appBoxStyle = {
 const appTopImage = {
   width: '100%',
   height: '150%',
-  opacity: '0.8',
-  filter: 'blur(2px) brightness(0.8)',
+  opacity: '1',
+  filter: 'blur(1px) brightness(1)',
   zIndex: '-3',
   overflow: 'hidden',
   '@media (max-width:600px)': {
