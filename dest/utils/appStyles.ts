@@ -16,17 +16,19 @@ const appBoxStyle = {
   height: '600px',
   zIndex: '-1',
   '@media (max-width:600px)': {
-    height: '400px',
+    height: '500px',
   },
 }
 
 const appTopImage = {
   width: '100%',
-  height: '270%',
+  height: '150%',
   opacity: '0.8',
   filter: 'blur(2px) brightness(0.8)',
   zIndex: '-3',
-  // boxShadow: '0px 25px 0px -2px grey',
+  '@media (max-width:600px)': {
+    height: '200%',
+  },
 }
 
 const appBotImage = {
@@ -37,7 +39,6 @@ const appBotImage = {
   right: '0',
   bottom: '0',
   zIndex: '-2',
-  // boxShadow: '0px 25px 0px -2px grey',
 }
 
 const imageModuleStyles = {
