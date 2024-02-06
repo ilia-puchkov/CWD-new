@@ -69,14 +69,14 @@ function Header({ onPopupCallClick }: HeaderProps) {
         <Box sx={{ flexGrow: 1 }} onClick={handleLogo}>
           {currentLogo ? (
             <img
-              style={{ width: '110px', marginRight: '20px' }}
-              src={logo}
+              style={{ width: '110px', height: '85px', marginRight: '20px' }}
+              src={logo2}
               alt="page-logo"
             />
           ) : (
             <img
-              style={{ width: '110px', marginRight: '20px' }}
-              src={logo2}
+              style={{ width: '110px', height: '85px', marginRight: '20px' }}
+              src={logo}
               alt="page-logo2"
             />
           )}

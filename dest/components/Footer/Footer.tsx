@@ -1,6 +1,6 @@
 import { Box, Button, ButtonGroup, Stack, Typography } from '@mui/material'
 import React from 'react'
-import logo from '../../images/cwd-logo.png'
+import logo from '../../images/cwd-logo-2.png'
 
 interface FooterProps {
   onPopupCallClick: () => void
