@@ -11,7 +11,7 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
     <Box
       component="section"
       id="intro"
-      mt={8}
+      mt={6}
       display={'flex'}
       justifyContent={'center'}
       sx={{
@@ -92,7 +92,7 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
             width: 400,
             '@media (max-width:600px)': {
               width: 250,
-              marginTop: 8,
+              marginTop: '25px',
               marginLeft: 'auto',
               marginRight: 'auto',
             },
