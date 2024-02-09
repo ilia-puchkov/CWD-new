@@ -1,13 +1,22 @@
 .pageAboutUsImage {
   position: absolute;
   top: 0;
-  left: 10%;
+  /* left: 10%; */
+  left: 0;
   height: 100%;
-  max-width: 100%;
+  max-width: 150%;
+  width: 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .pageAboutUsImage {
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .pageAboutUsImage {
+    width: 100%;
     left: 0%;
   }
 }

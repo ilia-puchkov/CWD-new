@@ -18,14 +18,7 @@ import {
   publicKey,
   questionsTemplate,
 } from './utils/mailUtils'
-import background from './images/pageTopBackground.jpg'
-import backBot from './images/blur.svg'
-import {
-  appBoxStyle,
-  appContainerStyle,
-  appTopImage,
-  appBotImage,
-} from './utils/appStyles'
+import { appBoxStyle, appContainerStyle, appTopImage } from './utils/appStyles'
 import PopupWithImage from './components/PopupWithImage/PopupWithImage'
 import pageLogoTest from './images/backtest.png'
 import pageTest from './images/testtest.png'
@@ -111,7 +104,7 @@ export function App() {
   return (
     <ThemeProvider theme={pageTheme}>
       <CssBaseline />
-      <Container sx={appContainerStyle}>
+      <Box sx={appContainerStyle}>
         <Box sx={appBoxStyle}>
           {backgroundImageSize ? (
             <img src={pageLogoTest} style={appTopImage} alt="back" />
@@ -144,7 +137,7 @@ export function App() {
           isOpen={isPopupImageOpen}
           onClose={handleAllPopupClose}
         />
-      </Container>
+      </Box>
     </ThemeProvider>
   )
 }

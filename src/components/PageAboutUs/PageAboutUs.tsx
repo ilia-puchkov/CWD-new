@@ -15,9 +15,6 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
       display={'flex'}
       justifyContent={'center'}
       sx={{
-        // backgroundImage: `url(${pageAboutUsBackground})`,
-        // backgroundSize: 'contain',
-        // backgroundRepeat: 'no-repeat',
         padding: '20px 0 40px',
         minHeight: '600px',
         '@media (max-width:600px)': {
@@ -41,7 +38,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           bgcolor: 'rgba(0, 0, 0, 0.2)',
           padding: '10px',
           zIndex: 2,
-          maxWidth: '500px',
+          maxWidth: '630px',
           marginRight: '110px',
           marginLeft: 'auto',
           '@media (max-width:600px)': {
@@ -79,7 +76,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
             sx={{ fontFamily: 'Merriweather' }}
           >
             мы, Катя и Эрик - пара сумасшедших креативщиков, живущих по принципу
-            &quot;для праздника не нужен повод &quot;!
+            &quot;для праздника не нужен повод &quot;
           </Typography>
         </aside>
         <Typography
@@ -87,7 +84,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           color="primary.contrastText"
           gutterBottom
           mb={2}
-          textAlign={'center'}
+          textAlign={'left'}
         >
           Все началось с оригинальных свиданий и организаций дней рождений друг
           для друга, а затем квартирники, массовые мероприятия, предсвадебная
@@ -99,10 +96,10 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           color="primary.contrastText"
           gutterBottom
           mb={2}
-          textAlign={'center'}
+          textAlign={'left'}
         >
           Теперь мы постоянно набираем обороты и не можем остановиться дарить
-          яркие впечатления себе и всем вокруг.
+          яркие впечатления себе и всем вокруг!
         </Typography>
         <Typography
           variant="body2"
@@ -110,7 +107,7 @@ function PageAboutUs({ onPopupFormClick }: PageAboutUsProps) {
           gutterBottom
           mb={2}
           zIndex={'2'}
-          textAlign={'center'}
+          textAlign={'left'}
         >
           Присоединяйтесь к нам и Вы получите те ивенты, которыми похвастаетесь
           в соцсетях, а через много-много лет Ваши внуки будут наизусть знать

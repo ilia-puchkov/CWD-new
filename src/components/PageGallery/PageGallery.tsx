@@ -20,7 +20,17 @@ function PageGallery({ onImageClick }: IImagePopupProps) {
     onImageClick(e.target)
   }
   return (
-    <Box component="section" id="gallery" mt={8}>
+    <Box
+      component="section"
+      id="gallery"
+      mt={8}
+      sx={{
+        padding: '40px 40px',
+        '@media (max-width:900px)': {
+          padding: '10px 5px',
+        },
+      }}
+    >
       <Typography
         variant="h2"
         color="primary"

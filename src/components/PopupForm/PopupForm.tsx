@@ -180,8 +180,13 @@ function PopupForm({ isOpen, onClose, onSubmit }: PopupFormProps) {
                   },
                 }}
               >
-                отправляя свои данные вы соглашаетесь с политикой
-                конфиденциальности
+                отправляя свои данные вы соглашаетесь&#10;
+                <a
+                  href="https://disk.yandex.ru/d/gIcpVBWKsJXtjw"
+                  style={{ textDecoration: 'none', color: 'white' }}
+                >
+                  с&#160;политикой&#160;конфиденциальности
+                </a>
               </Typography>
             </>
           )}

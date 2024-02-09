@@ -14,7 +14,12 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
       mt={8}
       display={'flex'}
       justifyContent={'center'}
-      padding={{ sx: '10px', md: '40px' }}
+      sx={{
+        padding: '40px 40px',
+        '@media (max-width:900px)': {
+          padding: '10px 20px',
+        },
+      }}
     >
       <Stack direction={{ sx: 'column', md: 'row' }}>
         <Box
@@ -37,7 +42,9 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
             <Typography
               variant="h1"
               color="primary.main"
-              sx={{ fontFamily: 'Merriweather' }}
+              mb={3}
+              mt={2}
+              sx={{ fontFamily: 'Merriweather', lineHeight: '1.1' }}
             >
               С НАМИ ЛЮБОЙ ДЕНЬ - ПРАЗДНИК!
             </Typography>
@@ -46,25 +53,28 @@ function PageIntro({ onPopupFormClick }: PageIntroProps) {
               color="primary.contrastText"
               sx={{
                 fontWeight: '500',
+                lineHeight: '1.1',
                 '@media (max-width:900px)': {
                   textAlign: 'center',
                 },
               }}
             >
-              создаём незабываемые мероприятия по индивидуальному сценарию
+              создаём незабываемые мероприятия по&#160;индивидуальному сценарию
             </Typography>
             <Button
               onClick={onPopupFormClick}
               variant="outlined"
               color="secondary"
-              size="small"
+              size="large"
               sx={{
                 transition: '.7s ease-in-out',
-                maxWidth: '170px',
+                maxWidth: '250px',
                 ':hover': {
                   bgcolor: 'secondary.main',
                   color: 'white',
                 },
+                // boxShadow:
+                //   '0px 0px 2px 0.3px #f02ed1, inset 0px 0px 4px 0.5px #f02ed1',
                 marginTop: 5,
                 '@media (max-width:900px)': {
                   marginLeft: 'auto',

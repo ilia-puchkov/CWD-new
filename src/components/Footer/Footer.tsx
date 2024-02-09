@@ -1,6 +1,6 @@
 import { Box, Button, ButtonGroup, Stack, Typography } from '@mui/material'
 import React from 'react'
-import logo from '../../images/cwd-logo.png'
+import logo from '../../images/cwd-logo-2.png'
 
 interface FooterProps {
   onPopupCallClick: () => void
@@ -8,7 +8,18 @@ interface FooterProps {
 
 function Footer({ onPopupCallClick }: FooterProps) {
   return (
-    <Box component="footer" id="contacts" pt={5} pb={2}>
+    <Box
+      component="footer"
+      id="contacts"
+      pt={5}
+      pb={2}
+      sx={{
+        padding: '40px 40px',
+        '@media (max-width:900px)': {
+          padding: '10px 5px',
+        },
+      }}
+    >
       <Typography
         variant="h2"
         color="primary.main"

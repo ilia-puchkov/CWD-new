@@ -55,7 +55,7 @@ const numberStyle = {
 
 const explanationDivisionStyle = 3
 
-const explanationSpacing = 0.5
+const explanationSpacing = 1.4
 
 export {
   hrStyle,
