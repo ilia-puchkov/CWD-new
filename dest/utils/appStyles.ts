@@ -1,10 +1,14 @@
 import backgroundNoise from '../images/page-background.png'
 
 const appContainerStyle = {
+  maxWidth: '1200px',
+  margin: '0 auto',
   backgroundImage: `url(${backgroundNoise})`,
-  '@media (max-width:600px)': {
-    padding: '5px',
-  },
+  paddingTop: '0',
+  paddingLeft: '0',
+  // '@media (max-width:600px)': {
+  //   padding: '5px',
+  // },
   position: 'relative',
 }
 

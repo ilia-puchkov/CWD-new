@@ -66,10 +66,17 @@ function Header({ onPopupCallClick }: HeaderProps) {
       sx={{ paddingTop: '10px' }}
     >
       <Toolbar>
-        <Box sx={{ flexGrow: 1 }} onClick={handleLogo}>
+        <Box
+          sx={{ flexGrow: 1, width: '110px', height: '85px' }}
+          onClick={handleLogo}
+        >
           {currentLogo ? (
             <img
-              style={{ width: '110px', height: '85px', marginRight: '20px' }}
+              style={{
+                width: '110px',
+                height: '85px',
+                marginRight: '20px',
+              }}
               src={logo2}
               alt="page-logo"
             />
@@ -93,6 +100,7 @@ function Header({ onPopupCallClick }: HeaderProps) {
                 bgcolor: 'secondary.main',
                 color: 'white',
               },
+              border: '1px solid',
               '@media (max-width:500px)': {
                 fontSize: '11px',
                 lineHeight: '11px',
